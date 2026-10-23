@@ -29,18 +29,18 @@
 </ul>
 
 <h2>2. Information stored only on your device</h2>
-<p>When you use Fasli without signing in, everything you enter stays on your device: your courses and lecture times, tasks, assignments, exam dates, reminders, language choice and settings. This information is not sent to us or to anyone else. You can erase it at any time from Settings &gt; "Delete all my data", or by uninstalling the app.</p>
+<p>When you use Fasli without signing in, everything you enter stays on your device: your courses and lecture times, tasks, assignments, exam dates, reminders, language choice and settings. Lecture and deadline reminders and the home-screen widgets are created on your phone and send nothing anywhere. This information is not sent to us or to anyone else. You can erase it at any time from Settings &gt; "Delete all my data on this phone", or by uninstalling the app.</p>
 
 <h2>3. Information we collect when you use optional features</h2>
-<p>Some of these features are not yet available in the app. This section describes how they work once they are.</p>
+<p>Sign in with Apple, subscriptions and crash reports may not be in your version of the app yet. This section describes how each feature works when it is available.</p>
 <h3>Sign-in (Google or Apple)</h3>
 <p>If you choose to sign in, we receive your name, email address and an account identifier from Google or Apple through Firebase Authentication (Google). We use them only to create your account, keep your data in sync across devices and contact you about your account. If you use "Hide My Email" with Apple, we receive a relay address instead of your real email.</p>
 <h3>Cloud backup and sync</h3>
-<p>If you are signed in, your study data (courses, schedule, tasks, exams, grades you enter and graduation plan) is stored in Google Firebase so you can restore it on a new phone.</p>
+<p>If you are signed in, your study data (courses, schedule, tasks, exams and grades you enter) is stored in Google Firebase so you can restore it on a new phone. Your graduation plan record (the courses and grades read from your SIS record) is kept on your phone only and is not backed up.</p>
 <h3>Sharing TMA dates with classmates (off unless you turn it on)</h3>
 <p>If you are signed in and switch on Settings &gt; Account &gt; "Share TMA dates with classmates", the app shares the due dates of the TMAs you enter, together with the course code, your university and the semester, so other Fasli students in the same course can add them. Nothing else is shared: not your name, email, task titles, marks or anything else in your account. Your dates are stored in Google Firebase under your account's random identifier, which other signed-in Fasli users can technically see but which does not reveal who you are. Classmates only see how many students entered each date, and a date is only suggested once at least two students entered it. Switching the setting off, or deleting your account, removes your shared dates.</p>
 <h3>PDF and photo import</h3>
-<p>If you choose to import a registration form, academic plan or transcript as a PDF or photo, the file you pick is processed to read your courses. Where processing happens on our server, the file is sent over an encrypted connection, used only to extract your course information, and deleted from the server after processing. We do not keep a copy of the original file. The app only accesses the files or photos you select; it does not browse your gallery.</p>
+<p>If you choose to import a registration form, academic plan or transcript as a PDF or photo, the file you pick is processed to read your courses. The file is sent over an encrypted connection to our server on Google Cloud (in Doha, Qatar), used only to read your courses and grades and work out your graduation plan, and discarded as soon as the answer is sent back. The server does not store the file or your record; your name is removed and your student ID is replaced by a one-way code before the result is returned to your phone. The app only accesses the files or photos you select; it does not browse your gallery.</p>
 <h3>Subscriptions</h3>
 <p>Payments are handled entirely by Google Play or the Apple App Store. We never see your card details. We use RevenueCat to check whether your subscription is active; it receives an anonymous app user ID and your purchase history for Fasli.</p>
 <h3>Crash and performance reports</h3>
@@ -55,6 +55,7 @@
 <p>We use these providers to run the optional features above. They process data on our behalf and under their own privacy terms:</p>
 <ul>
   <li>Google Firebase (sign-in, cloud storage, crash reports): <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
+  <li>Google Cloud (the server that reads imported files and plans graduation routes): <a href="https://cloud.google.com/privacy">cloud.google.com/privacy</a></li>
   <li>RevenueCat (subscription status): <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></li>
   <li>Google Play and Apple App Store (payments)</li>
 </ul>
@@ -68,8 +69,8 @@
 
 <h2>8. Your choices and rights</h2>
 <ul>
-  <li><strong>Delete on-device data:</strong> Settings &gt; "Delete all my data".</li>
-  <li><strong>Delete your account:</strong> in the app, Settings &gt; Account &gt; "Delete account", or follow the steps on our <a href="../delete-account/">account deletion page</a>. Deleting your account erases your cloud data. It does not cancel a subscription; cancel that in Google Play or the App Store.</li>
+  <li><strong>Delete on-device data:</strong> Settings &gt; "Delete all my data on this phone".</li>
+  <li><strong>Delete your account:</strong> in the app, Settings &gt; Account &gt; "Delete my account", or follow the steps on our <a href="../delete-account/">account deletion page</a>. Deleting your account erases your cloud data. It does not cancel a subscription; cancel that in Google Play or the App Store.</li>
   <li><strong>Access or correct your data:</strong> most of it you can view and edit directly in the app; for anything else, email us.</li>
 </ul>
 
@@ -98,18 +99,18 @@
 </ul>
 
 <h2>2. معلومات تُحفظ على جهازك فقط</h2>
-<p>عند استخدام فصلي دون تسجيل الدخول، يبقى كل ما تُدخله على جهازك: المقررات ومواعيد المحاضرات، والمهام، والواجبات، ومواعيد الاختبارات، والتذكيرات، واللغة، والإعدادات. لا تُرسل هذه المعلومات إلينا ولا إلى أي جهة أخرى. يمكنك مسحها في أي وقت من الإعدادات &gt; "حذف جميع بياناتي"، أو بحذف التطبيق.</p>
+<p>عند استخدام فصلي دون تسجيل الدخول، يبقى كل ما تُدخله على جهازك: المقررات ومواعيد المحاضرات، والمهام، والواجبات، ومواعيد الاختبارات، والتذكيرات، واللغة، والإعدادات. تُنشأ تذكيرات المحاضرات والتسليم وأدوات الشاشة الرئيسية على هاتفك ولا ترسل أي شيء. لا تُرسل هذه المعلومات إلينا ولا إلى أي جهة أخرى. يمكنك مسحها في أي وقت من الإعدادات &gt; "حذف جميع بياناتي من هذا الهاتف"، أو بحذف التطبيق.</p>
 
 <h2>3. معلومات نجمعها عند استخدام الميزات الاختيارية</h2>
-<p>بعض هذه الميزات غير متاحة بعد في التطبيق، ويوضّح هذا القسم كيف تعمل عند إتاحتها.</p>
+<p>قد لا تتوفر بعد في نسختك من التطبيق ميزات تسجيل الدخول عبر Apple والاشتراكات وتقارير الأعطال، ويوضّح هذا القسم كيف تعمل كل ميزة عند توفرها.</p>
 <h3>تسجيل الدخول (Google أو Apple)</h3>
 <p>إذا اخترت تسجيل الدخول، نستلم اسمك وبريدك الإلكتروني ومعرّف الحساب من Google أو Apple عبر خدمة Firebase Authentication من Google. نستخدمها فقط لإنشاء حسابك، ومزامنة بياناتك بين أجهزتك، والتواصل معك بشأن حسابك. إذا استخدمت خيار "إخفاء بريدي الإلكتروني" من Apple، نستلم عنوانًا بديلًا بدلًا من بريدك الحقيقي.</p>
 <h3>النسخ الاحتياطي والمزامنة</h3>
-<p>عند تسجيل الدخول، تُحفظ بياناتك الدراسية (المقررات، والجدول، والمهام، والاختبارات، والدرجات التي تُدخلها، وخطة التخرج) في Google Firebase لتتمكن من استعادتها على هاتف جديد.</p>
+<p>عند تسجيل الدخول، تُحفظ بياناتك الدراسية (المقررات، والجدول، والمهام، والاختبارات، والدرجات التي تُدخلها) في Google Firebase لتتمكن من استعادتها على هاتف جديد. أما سجل خطة التخرج (المقررات والدرجات المقروءة من سجلك في SIS) فيبقى على هاتفك فقط ولا يُنسخ احتياطيًا.</p>
 <h3>مشاركة مواعيد TMA مع الزملاء (لا تعمل إلا إذا فعّلتها)</h3>
 <p>إذا سجّلت الدخول وفعّلت خيار الإعدادات &gt; الحساب &gt; "مشاركة مواعيد TMA مع الزملاء"، يشارك التطبيق تواريخ تسليم TMA التي تُدخلها، مع رمز المقرر والجامعة والفصل الدراسي، ليتمكن طلبة فصلي الآخرون في المقرر نفسه من إضافتها. لا يُشارك أي شيء آخر: لا اسمك ولا بريدك ولا عناوين المهام ولا الدرجات ولا أي شيء آخر في حسابك. تُحفظ التواريخ في Google Firebase تحت المعرّف العشوائي لحسابك، وهو معرّف قد يراه تقنيًا مستخدمو فصلي الآخرون المسجّلون لكنه لا يكشف هويتك. لا يرى الزملاء إلا عدد الطلبة الذين أدخلوا كل تاريخ، ولا يُقترح التاريخ إلا بعد أن يدخله طالبان على الأقل. إيقاف الخيار أو حذف حسابك يحذف التواريخ التي شاركتها.</p>
 <h3>استيراد ملفات PDF والصور</h3>
-<p>إذا اخترت استيراد استمارة التسجيل أو الخطة الدراسية أو كشف الدرجات بصيغة PDF أو صورة، تتم معالجة الملف الذي تختاره لقراءة مقرراتك. وإذا تمت المعالجة على خادمنا، يُرسل الملف عبر اتصال مشفّر، ويُستخدم فقط لاستخراج بيانات المقررات، ثم يُحذف من الخادم بعد المعالجة. لا نحتفظ بنسخة من الملف الأصلي. يصل التطبيق فقط إلى الملفات أو الصور التي تختارها، ولا يتصفح معرض الصور.</p>
+<p>إذا اخترت استيراد استمارة التسجيل أو الخطة الدراسية أو كشف الدرجات بصيغة PDF أو صورة، تتم معالجة الملف الذي تختاره لقراءة مقرراتك. يُرسل الملف عبر اتصال مشفّر إلى خادمنا على Google Cloud (في الدوحة، قطر)، ويُستخدم فقط لقراءة مقرراتك ودرجاتك وحساب خطة تخرجك، ثم يُتخلَّص منه فور إرسال النتيجة. لا يحفظ الخادم الملف ولا سجلك، ويُحذف اسمك ويُستبدل رقمك الجامعي برمز أحادي الاتجاه قبل إعادة النتيجة إلى هاتفك. يصل التطبيق فقط إلى الملفات أو الصور التي تختارها، ولا يتصفح معرض الصور.</p>
 <h3>الاشتراكات</h3>
 <p>تتم عمليات الدفع بالكامل عبر Google Play أو متجر App Store من Apple، ولا نطّلع أبدًا على بيانات بطاقتك. نستخدم خدمة RevenueCat للتحقق من أن اشتراكك فعّال، وتستلم معرّفًا مجهول الهوية للمستخدم وسجل مشترياتك في فصلي.</p>
 <h3>تقارير الأعطال والأداء</h3>
@@ -124,6 +125,7 @@
 <p>نستعين بالمزوّدين التاليين لتشغيل الميزات الاختيارية المذكورة أعلاه، وهم يعالجون البيانات نيابةً عنا ووفق شروط الخصوصية الخاصة بهم:</p>
 <ul>
   <li>Google Firebase (تسجيل الدخول، والتخزين السحابي، وتقارير الأعطال): <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></li>
+  <li>Google Cloud (الخادم الذي يقرأ الملفات المستوردة ويخطط مسارات التخرج): <a href="https://cloud.google.com/privacy">cloud.google.com/privacy</a></li>
   <li>RevenueCat (حالة الاشتراك): <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></li>
   <li>Google Play و App Store من Apple (الدفع)</li>
 </ul>
@@ -137,8 +139,8 @@
 
 <h2>8. خياراتك وحقوقك</h2>
 <ul>
-  <li><strong>حذف البيانات من الجهاز:</strong> الإعدادات &gt; "حذف جميع بياناتي".</li>
-  <li><strong>حذف حسابك:</strong> من داخل التطبيق عبر الإعدادات &gt; الحساب &gt; "حذف الحساب"، أو باتباع الخطوات في <a href="../delete-account/#ar">صفحة حذف الحساب</a>. حذف الحساب يمسح بياناتك السحابية، لكنه لا يلغي الاشتراك؛ يجب إلغاؤه من Google Play أو App Store.</li>
+  <li><strong>حذف البيانات من الجهاز:</strong> الإعدادات &gt; "حذف جميع بياناتي من هذا الهاتف".</li>
+  <li><strong>حذف حسابك:</strong> من داخل التطبيق عبر الإعدادات &gt; الحساب &gt; "حذف حسابي"، أو باتباع الخطوات في <a href="../delete-account/#ar">صفحة حذف الحساب</a>. حذف الحساب يمسح بياناتك السحابية، لكنه لا يلغي الاشتراك؛ يجب إلغاؤه من Google Play أو App Store.</li>
   <li><strong>الاطلاع على بياناتك أو تصحيحها:</strong> يمكنك عرض معظمها وتعديله مباشرة في التطبيق، ولأي شيء آخر راسلنا.</li>
 </ul>
 
