@@ -1,44 +1,166 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fasli – Uni Planner | فصلي الجامعي</title>
-<meta name="description" content="Fasli – Uni Planner: class schedule, deadlines and exam countdowns for university students.">
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="فصلي: خطة تخرّجك فصلاً بفصل من ملف نظام الجامعة، وجدولك ومواعيدك ومعدلك في مكان واحد. Fasli: your graduation plan from your SIS record, plus your timetable, deadlines and GPA.">
+<meta property="og:title" content="Fasli – Uni Planner | فصلي الجامعي">
+<meta property="og:description" content="Know when you'll graduate and what to register each semester. اعرف متى تتخرّج وشنو تسجّل كل فصل.">
+<meta property="og:image" content="https://fasliplanner.github.io/icon.svg">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+:root{--slate:#3D5A80;--slate-dark:#2b4160;--gold:#E0A83F;--bg:#ffffff;--soft:#eef2f7;--ink:#1b2433;--muted:#5a6577;--line:#dde3eb;--link:#3D5A80;--card:#ffffff}
+@media (prefers-color-scheme:dark){:root{--bg:#11161e;--soft:#1a2230;--ink:#e8ecf2;--muted:#a1abba;--line:#2a3342;--link:#9cb8de;--card:#151b25;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Readex Pro",Tahoma,"Noto Sans Arabic",Arial,sans-serif}
+a{color:var(--link)}
+.in{max-width:1000px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+header.hero{background:var(--slate);color:#fff}
+header.hero .in{padding-top:24px;padding-bottom:56px;display:grid;gap:28px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:20px;color:#fff;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+nav .links{display:flex;gap:16px;flex-wrap:wrap}
+nav .links a{color:#fff;opacity:.9;font-size:15px;text-decoration:none}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.25;margin:0 0 12px;font-weight:700;text-wrap:balance}
+h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin:0 0 22px;opacity:.93;font-size:19px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-gold{background:var(--gold);color:#1b2433}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.small{font-size:14px;opacity:.85}
+.phone{background:#fff;color:#1b2433;border-radius:28px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.25);max-width:300px;justify-self:center;width:100%}
+.phone h4{margin:0 0 8px;font-size:14px;color:#5a6577;font-weight:500}
+.ring{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.ring b{font-size:28px;color:#3D5A80}
+.sem{border:1px solid #dde3eb;border-radius:12px;padding:8px 12px;margin-bottom:8px;font-size:14px}
+.sem.now{border-color:#E0A83F;background:#fdf6e7}
+.sem span{display:block;color:#5a6577;font-size:12px}
+section{padding-top:56px;padding-bottom:56px}
+section.alt{background:var(--soft)}
+h2{font-size:28px;margin:0 0 24px;text-wrap:balance}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.steps{counter-reset:s;display:grid;gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-weight:600}
+.join{background:var(--slate);color:#fff;border-radius:20px;padding:28px;display:grid;gap:12px}
+.join p{margin:0;opacity:.93}
+.join ul{margin:0;padding-inline-start:20px}
+.en{direction:ltr;text-align:left}
+.en .in{display:grid;gap:14px}
+.en p{margin:0;max-width:62ch}
+.en ul{margin:0;padding-left:20px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:28px;padding-bottom:28px;color:var(--muted);font-size:14px}
+footer .in{display:grid;gap:8px}
+footer p{margin:0}
+.disc{font-weight:500;color:var(--ink)}
+@media (max-width:720px){.hero-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<main>
-<header>
-  <a class="brand" href="./">Fasli · فصلي</a>
-  <nav><a href="privacy/">Privacy</a><a href="delete-account/">Delete account</a></nav>
+<header class="hero">
+  <div class="in">
+    <nav>
+      <a class="brand" href="./"><img src="icon.svg" alt="" width="40" height="40">فصلي الجامعي</a>
+      <div class="links"><a href="#join">انضم للتجربة</a><a href="#en" lang="en">English</a></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1>اعرف متى تتخرّج، <em>وشنو تسجّل</em> كل فصل.</h1>
+        <p>ارفع ملف سجلك من نظام الجامعة، وفصلي يرتّب لك المواد فصلاً بفصل حسب المتطلبات وحدود الساعات، لين التخرّج. ومعه جدولك ومواعيدك ومعدلك في مكان واحد. مصمّم لطلاب الجامعة العربية المفتوحة في الكويت.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="#join">انضم لتجربة التطبيق</a>
+          <a class="btn btn-ghost" href="#features">شنو يسوي فصلي؟</a>
+        </div>
+        <p class="small">أندرويد · مجاني أثناء التجربة · عربي وإنجليزي</p>
+      </div>
+      <div class="phone" aria-label="مثال لشاشة التطبيق ببيانات تجريبية">
+        <h4>مثال · طالب تجريبي، إدارة أعمال</h4>
+        <div class="ring"><svg width="56" height="56" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" fill="none" stroke="#e3eaf3" stroke-width="4"/><circle cx="18" cy="18" r="15" fill="none" stroke="#E0A83F" stroke-width="4" stroke-dasharray="58 100" stroke-linecap="round" transform="rotate(-90 18 18)"/></svg><div><b>62٪</b><br><small>من الخطة منجزة</small></div></div>
+        <div class="sem now">الفصل القادم · ١٦ ساعة<span>٤ مواد · مرتبة حسب المتطلبات</span></div>
+        <div class="sem">الفصل اللي بعده · ١٦ ساعة<span>٤ مواد</span></div>
+        <div class="sem">التخرّج 🎓<span>المسار السريع مع الصيفي</span></div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<section lang="en" dir="ltr">
-<h1>Fasli – Uni Planner</h1>
-<p>Plan smarter. Graduate sooner. Fasli keeps your university week in one place: lectures, assignments, quizzes and exams, with clear countdowns.</p>
-<h2>Support</h2>
-<p>Questions, ideas or problems? Email <a href="mailto:fasli.planner@gmail.com">fasli.planner@gmail.com</a>.</p>
-<ul>
-  <li><a href="privacy/">Privacy policy</a></li>
-  <li><a href="delete-account/">Delete your account and data</a></li>
-</ul>
-<p class="note">Fasli is an independent academic planning tool. It is not affiliated with, endorsed by, or operated by Arab Open University or any other university.</p>
+<section id="how">
+  <div class="in">
+    <h2>ثلاث خطوات</h2>
+    <ol class="steps">
+      <li><div><b>ارفع ملف سجلك (PDF)</b><br>من نظام الجامعة. ما نطلب كلمة السر حقك أبداً.</div></li>
+      <li><div><b>شوف وين وصلت</b><br>نسبة الإنجاز، المواد الباقية، ومعدلك.</div></li>
+      <li><div><b>خذ خطة التخرّج</b><br>مسار سريع أو متوازن، فصلاً بفصل، مع البدائل.</div></li>
+    </ol>
+  </div>
 </section>
 
-<section lang="ar" dir="rtl">
-<h1>فصلي الجامعي</h1>
-<p>خطّط بذكاء. تخرّج أسرع. يجمع فصلي أسبوعك الجامعي في مكان واحد: المحاضرات والواجبات والاختبارات القصيرة والنهائية، مع عدّ تنازلي واضح.</p>
-<h2>الدعم</h2>
-<p>للأسئلة والاقتراحات أو المشكلات راسلنا على <a href="mailto:fasli.planner@gmail.com">fasli.planner@gmail.com</a>.</p>
-<ul>
-  <li><a href="privacy/#ar">سياسة الخصوصية</a></li>
-  <li><a href="delete-account/#ar">حذف حسابك وبياناتك</a></li>
-</ul>
-<p class="note">فصلي أداة مستقلة للتخطيط الأكاديمي، وهو غير تابع للجامعة العربية المفتوحة أو لأي جامعة أخرى، ولا تعتمده أو تديره أي منها.</p>
+<section class="alt" id="features">
+  <div class="in">
+    <h2>شنو يسوي فصلي؟</h2>
+    <div class="grid">
+      <div class="card"><h3>خطة التخرّج</h3><p>كل الفصول لين التخرّج، مع المتطلبات السابقة وحدود الساعات. احفظ لين ٣ خطط وقارن بينها.</p></div>
+      <div class="card"><h3>استيراد من نظام الجامعة</h3><p>ارفع كشف الدرجات أو نموذج التسجيل، وفصلي يقرأ موادك وجدولك بدل ما تكتبها بيدك.</p></div>
+      <div class="card"><h3>مخطط مراجعة النهائيات</h3><p>يوزّع ساعات المذاكرة قبل كل اختبار نهائي، ويعيد التوزيع إذا فاتك يوم.</p></div>
+      <div class="card"><h3>كم تحتاج في الفاينل؟</h3><p>دخّل درجات الـTMA والـMTA وشوف الدرجة المطلوبة، مع حساب المعدل والهدف.</p></div>
+      <div class="card"><h3>مواعيدك في تقويم جوالك</h3><p>أضف المحاضرات والاختبارات ومواعيد التسليم لتقويم الجوال بضغطة، مع تنبيهات وودجت.</p></div>
+      <div class="card"><h3>مواد من جامعة ثانية</h3><p>شوف أي مواد ممكن تنحسب لك، وكم ساعة توفّر، وموعد تخرّجك الجديد. تقدير فقط، والقرار للجامعة.</p></div>
+      <div class="card"><h3>تقرير تقدّم PDF</h3><p>صفحة وحدة فيها الساعات المنجزة والمعدل وموعد التخرّج المتوقع، تشاركها مع أهلك أو جهة الابتعاث.</p></div>
+      <div class="card"><h3>قبل لا تسحب مادة</h3><p>آخر يوم للسحب، نسبة الخصم من الرسوم، وتأثير السحب على موعد تخرّجك.</p></div>
+    </div>
+    <p style="color:var(--muted);margin:20px 0 0">أغلب الأدوات مجانية. خطة التخرّج الكاملة جزء من فصلي Plus.</p>
+  </div>
 </section>
 
-<footer>© 2026 Fasli</footer>
-</main>
+<section id="join">
+  <div class="in">
+    <div class="join">
+      <h2 style="margin:0">انضم لتجربة التطبيق</h2>
+      <p>نبحث عن طلاب يجرّبون فصلي قبل نشره على Google Play. التجربة مجانية وتطوعية.</p>
+      <ul>
+        <li>هاتف أندرويد وبريد Gmail</li>
+        <li>تبقي التطبيق مثبتاً ١٤ يوماً (ما يلزم تستخدمه كل يوم)</li>
+      </ul>
+      <div class="cta"><a class="btn btn-gold" href="mailto:fasli.planner@gmail.com?subject=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AC%D8%B1%D8%A8%20%D9%81%D8%B5%D9%84%D9%8A%20%2F%20Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%20%2F%20Phone%3A%20%0A">راسلنا للانضمام</a><span class="small">أو أرسل بريد Gmail حقك إلى fasli.planner@gmail.com</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt en" id="en" lang="en">
+  <div class="in">
+    <h2>Fasli – Uni Planner</h2>
+    <p><b>Know when you'll graduate, and what to register every semester.</b> Upload your record PDF from the university system and Fasli builds your route semester by semester, checking prerequisites and credit limits all the way to graduation. Made for Arab Open University Kuwait students.</p>
+    <ul>
+      <li>Graduation plan: save and compare up to 3 plans</li>
+      <li>Import your transcript or registration form instead of typing</li>
+      <li>Finals revision planner that re-balances when you miss a day</li>
+      <li>Final-mark calculator (TMA + MTA), GPA and GPA goal</li>
+      <li>Add classes, exams and deadlines to your phone's calendar</li>
+      <li>Transfer credits estimate and a shareable progress report PDF</li>
+    </ul>
+    <p>Most tools are free. The full graduation plan is part of Fasli Plus. We never ask for your university password.</p>
+    <p><b>Join the test:</b> we're looking for Android users with a Gmail address who can keep the app installed for 14 days. <a href="mailto:fasli.planner@gmail.com?subject=Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0APhone%3A%20%0A">Email us to join</a> (fasli.planner@gmail.com).</p>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <p class="disc">فصلي تطبيق مستقل، غير تابع للجامعة العربية المفتوحة ولا معتمد منها. تأكّد دائماً من المواعيد والقرارات مع جامعتك ومرشدك الأكاديمي.</p>
+    <p class="disc" lang="en" dir="ltr">Fasli is an independent app, not affiliated with or endorsed by Arab Open University. Always confirm dates and decisions with your university and academic advisor.</p>
+    <p><a href="privacy/">سياسة الخصوصية · Privacy</a> · <a href="delete-account/">حذف الحساب · Delete account</a> · fasli.planner@gmail.com · Instagram <a href="https://www.instagram.com/fasliplanner/">@fasliplanner</a></p>
+    <p>© 2026 Fasli</p>
+  </div>
+</footer>
 </body>
 </html>
