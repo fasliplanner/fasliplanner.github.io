@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fasli – Uni Planner | فصلي الجامعي</title>
+<meta name="description" content="فصلي: خطة تخرّجك فصلاً بفصل من ملف نظام الجامعة، وجدولك ومهامك ودرجاتك ومعدلك في مكان واحد. Fasli: your graduation plan from your SIS record, plus your timetable, tasks, marks and GPA.">
+<meta property="og:title" content="Fasli – Uni Planner | فصلي الجامعي">
+<meta property="og:description" content="Know when you'll graduate and what to register each semester. اعرف متى تتخرّج وشنو تسجّل كل فصل.">
+<meta property="og:image" content="https://fasliplanner.github.io/img/ar_1_today.webp">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{--slate:#3D5A80;--night:#1E2B42;--gold:#E0A83F;--gold-text:#8A5E0E;--bg:#ffffff;--soft:#eef2f7;--ink:#1b2433;--muted:#5a6577;--line:#dde3eb;--link:#3D5A80;--card:#ffffff;
+--display:"El Messiri","DM Serif Display",Georgia,serif;--body:"IBM Plex Sans Arabic",Tahoma,"Noto Sans Arabic",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#11161e;--soft:#1a2230;--ink:#e8ecf2;--muted:#a1abba;--line:#2a3342;--link:#9cb8de;--card:#151b25;--gold-text:#E9B95A;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 var(--body)}
+a{color:var(--link)}
+:lang(en){--display:"DM Serif Display","El Messiri",Georgia,serif}
+.in{max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+header.hero{background:var(--slate);color:#fff;position:relative;overflow:hidden}
+header.hero::before{content:"";position:absolute;inset-block-start:-120px;inset-inline-end:-120px;width:420px;height:420px;opacity:.08;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2'%3E%3Crect x='-34' y='-34' width='68' height='68'/%3E%3Crect x='-34' y='-34' width='68' height='68' transform='rotate(45)'/%3E%3Ccircle r='16'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none}
+header.hero .in{padding-top:24px;padding-bottom:56px;display:grid;gap:28px;position:relative}
+nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:20px;color:#fff;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+nav .links{display:flex;gap:16px;flex-wrap:wrap}
+nav .links a{color:#fff;opacity:.9;font-size:15px;text-decoration:none}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:center}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance}
+:lang(en) h1,:lang(en) h2,:lang(en) h3,h2:lang(en){font-weight:400}
+h1{font-size:clamp(32px,6vw,50px);line-height:1.3;margin:0 0 12px}
+h1 em{font-style:normal;color:var(--gold)}
+.ruler{display:block;width:120px;height:14px;margin:0 0 18px}
+.hero p{margin:0 0 22px;opacity:.93;font-size:19px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn-gold{background:var(--gold);color:#1b2433}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.small{font-size:14px;opacity:.85}
+.shot{display:block;width:100%;max-width:270px;height:auto;aspect-ratio:540/1168;border-radius:30px;border:8px solid var(--night);background:var(--night);box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.hero .shot{justify-self:center}
+section{padding-top:56px;padding-bottom:56px}
+section.alt{background:var(--soft)}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.35;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 28px;max-width:40em}
+.tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+.tabs figure{margin:0;display:grid;gap:10px;justify-items:center;text-align:center}
+.tabs .shot{max-width:200px;border-width:6px;border-radius:24px;box-shadow:0 10px 26px rgba(30,43,66,.18)}
+.tabs figcaption b{display:block;font-size:16px}
+.tabs figcaption span{display:block;color:var(--muted);font-size:14px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px}
+.card.new{border-color:var(--gold)}
+.card h3{margin:0 0 6px;font-size:20px;line-height:1.4}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--gold-text);letter-spacing:.02em;margin-bottom:4px}
+.steps{counter-reset:s;display:grid;gap:14px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--slate);color:#fff;display:grid;place-items:center;font-weight:600}
+.join{background:var(--slate);color:#fff;border-radius:10px;padding:28px;display:grid;gap:12px}
+.join p{margin:0;opacity:.93}
+.join ul{margin:0;padding-inline-start:20px}
+.en{direction:ltr;text-align:left}
+.en .in{display:grid;gap:14px}
+.en p{margin:0;max-width:62ch}
+.en ul{margin:0;padding-left:20px;color:var(--muted)}
+.en .tabs{margin:10px 0}
+footer{border-top:1px solid var(--line);padding-top:28px;padding-bottom:28px;color:var(--muted);font-size:14px}
+footer .in{display:grid;gap:8px}
+footer p{margin:0}
+.disc{font-weight:500;color:var(--ink)}
+@media (max-width:860px){.tabs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(170px,46%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.tabs figure{scroll-snap-align:start}}
+@media (max-width:720px){.hero-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="in">
+    <nav>
+      <a class="brand" href="./"><img src="icon.svg" alt="" width="40" height="40">فصلي الجامعي</a>
+      <div class="links"><a href="#tabs">الشاشات</a><a href="#join">انضم للتجربة</a><a href="#en" lang="en">English</a></div>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1>اعرف متى تتخرّج، <em>وشنو تسجّل</em> كل فصل.</h1>
+        <svg class="ruler" viewBox="0 0 120 14" aria-hidden="true"><path d="M1 12H119" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-linecap="round"/><path d="M80 12H119" stroke="#E0A83F" stroke-width="3" stroke-linecap="round"/><g stroke="rgba(255,255,255,.6)"><path d="M1 10V1M18 10V6M35 10V4M52 10V6M69 10V1M86 10V6M103 10V4M119 10V1"/></g></svg>
+        <p>ارفع ملف سجلك من نظام الجامعة، وفصلي يرتّب لك المواد فصلاً بفصل حسب المتطلبات وحدود الساعات، لين التخرّج. ومعه يومك وجدولك ومهامك ودرجاتك في مكان واحد. مصمّم لطلاب الجامعة العربية المفتوحة في الكويت والسعودية والأردن وعُمان والبحرين ولبنان ومصر.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="#join">انضم لتجربة التطبيق</a>
+          <a class="btn btn-ghost" href="#features">شنو يسوي فصلي؟</a>
+        </div>
+        <p class="small">أندرويد · مجاني · عربي وإنجليزي · وضع داكن</p>
+      </div>
+      <img class="shot" src="img/ar_1_today.webp" width="540" height="1168" alt="شاشة اليوم في فصلي: المحاضرة القادمة، وعدّ تنازلي، ومسار اليوم، ببيانات طالبة تجريبية">
+    </div>
+  </div>
+</header>
+
+<section id="tabs">
+  <div class="in">
+    <h2>خمس شاشات، كل وحدة لها شغلة</h2>
+    <p class="lead">اليوم والجدول والمهام والدرجات والخطة. والأدوات الإضافية مرتّبة داخلها، تطلع لك لما تحتاجها بس.</p>
+    <div class="tabs">
+      <figure><img class="shot" src="img/ar_1_today.webp" width="540" height="1168" loading="lazy" alt="شاشة اليوم"><figcaption><b>اليوم</b><span>المحاضرة القادمة، وهل حضرت؟، والمواعيد القريبة</span></figcaption></figure>
+      <figure><img class="shot" src="img/ar_2_schedule.webp" width="540" height="1168" loading="lazy" alt="شاشة الجدول"><figcaption><b>الجدول</b><span>يومك وأسبوعك، وجدول رمضان</span></figcaption></figure>
+      <figure><img class="shot" src="img/ar_5_tasks.webp" width="540" height="1168" loading="lazy" alt="شاشة المهام والاختبارات"><figcaption><b>المهام</b><span>الواجبات والاختبارات ومواعيد الجامعة الرسمية</span></figcaption></figure>
+      <figure><img class="shot" src="img/ar_4_marks.webp" width="540" height="1168" loading="lazy" alt="شاشة الدرجات"><figcaption><b>الدرجات</b><span>المعدل المتوقع، والمواد، والحضور والتركيز</span></figcaption></figure>
+      <figure><img class="shot" src="img/ar_3_plan.webp" width="540" height="1168" loading="lazy" alt="شاشة الخطة"><figcaption><b>الخطة</b><span>هل أنت على المسار الصحيح؟ وشنو تسجّل بعدين</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="in">
+    <h2>ثلاث خطوات</h2>
+    <p class="lead">تقدر تبدأ بدون ملفات وتدخّل موادك بيدك، بس الملف أسرع وأدق.</p>
+    <ol class="steps">
+      <li><div><b>ارفع ملف سجلك (PDF)</b><br>من نظام الجامعة. ما نطلب كلمة السر حقك أبداً.</div></li>
+      <li><div><b>شوف وين وصلت</b><br>الساعات المنجزة، المواد الباقية، ومعدلك.</div></li>
+      <li><div><b>خذ خطة التخرّج</b><br>المسار الأسرع أو المتوازن أو الأخف، فصلاً بفصل، مع البدائل.</div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="features">
+  <div class="in">
+    <h2>شنو يسوي فصلي؟</h2>
+    <p class="lead">كل الأدوات مجانية عند الإطلاق.</p>
+    <div class="grid">
+      <div class="card"><h3>خطة التخرّج</h3><p>كل الفصول لين التخرّج، مع المتطلبات السابقة وحدود الساعات. ثلاث مسارات: الأسرع والمتوازن والأخف. احفظ لين ٣ خطط وقارن بينها، وشوفها حتى بدون إنترنت.</p></div>
+      <div class="card new"><span class="tag">جديد</span><h3>يومك في مسار واحد</h3><p>شاشة اليوم تبيّن المحاضرة القادمة وكم باقي عليها، وتسألك بعد المحاضرة: حضرت أو غبت؟ عشان يبقى عدّاد الغياب صحيح.</p></div>
+      <div class="card new"><span class="tag">جديد</span><h3>دفتر المهام</h3><p>كل واجب واختبار مع كم يوم باقي، وعلّمه «تم» بلمسة لما تخلّص. ومعه مواعيد الجامعة الرسمية: الأقساط والسحب والاختبارات.</p></div>
+      <div class="card"><h3>استيراد بدل الكتابة</h3><p>ارفع كشف الدرجات أو نموذج التسجيل أو صورة الجدول أو خطة المادة (السيلابس)، وفصلي يقرأها وتراجعها قبل الحفظ.</p></div>
+      <div class="card"><h3>كم تحتاج في الفاينل؟</h3><p>دخّل درجات الـTMA والـMTA وشوف الدرجة المطلوبة لكل تقدير، مع تنبيه إذا المادة في خطر قبل آخر يوم للسحب.</p></div>
+      <div class="card"><h3>المعدل ووضعك الأكاديمي</h3><p>حاسبة معدل مع هدف، ووضعك من الإنذارات الأكاديمية وكيف ترجع فوق ٢.٠٠، ومرتبة التخرّج ومنح التفوق.</p></div>
+      <div class="card"><h3>يوم الاختبار</h3><p>عدّ تنازلي، وقائمة باللي تحتاجه، وقاعدة التأخر عن الدخول. وإذا فاتك اختبار، يقولك شنو تسوي وآخر موعد للعذر، وكيف تتظلم على درجة.</p></div>
+      <div class="card"><h3>مراجعة النهائيات</h3><p>اختار النهائيات اللي تبي لها خطة، وفصلي يقترح ساعات المذاكرة قبل كل اختبار. ما يجدول شي إلا إذا وافقت.</p></div>
+      <div class="card"><h3>مؤقت التركيز</h3><p>جلسات مذاكرة بمؤقت، وسجل أسبوعي لساعات تركيزك لكل مادة.</p></div>
+      <div class="card"><h3>تذكيرات على كيفك</h3><p>قبل المحاضرة ومواعيد التسليم والاختبارات، مع ساعات هدوء وجدول رمضان، وملخص أسبوعي صباح كل أحد.</p></div>
+      <div class="card"><h3>شكله على ذوقك</h3><p>فاتح أو داكن أو حسب الجوال، وأربعة ألوان. وتقدر تخفي أو ترتّب بطاقات شاشة اليوم.</p></div>
+      <div class="card"><h3>بياناتك عندك</h3><p>تشتغل بدون حساب، وبياناتك على جوالك. احفظ نسخة احتياطية في ملف وحدة، وأرجعها متى ما تبي.</p></div>
+    </div>
+    <p style="color:var(--muted);margin:20px 0 0">عربي وإنجليزي، على الجوال والتابلت. وأدوات ثانية: تقرير تقدّم PDF، مواد من جامعة ثانية، قبل لا تسحب مادة، والتقويم الأكاديمي.</p>
+  </div>
+</section>
+
+<section id="join" class="alt">
+  <div class="in">
+    <div class="join">
+      <h2 style="margin:0">انضم لتجربة التطبيق</h2>
+      <p>نبحث عن طلاب يجرّبون فصلي قبل نشره على Google Play. التجربة مجانية وتطوعية.</p>
+      <ul>
+        <li>هاتف أندرويد وبريد Gmail</li>
+        <li>تبقي التطبيق مثبتاً ١٤ يوماً (ما يلزم تستخدمه كل يوم)</li>
+      </ul>
+      <div class="cta"><a class="btn btn-gold" href="mailto:fasli.planner@gmail.com?subject=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AC%D8%B1%D8%A8%20%D9%81%D8%B5%D9%84%D9%8A%20%2F%20Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%20%2F%20Phone%3A%20%0A">راسلنا للانضمام</a><span class="small">أو أرسل بريد Gmail حقك إلى fasli.planner@gmail.com</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="en" id="en" lang="en">
+  <div class="in">
+    <h2>Fasli – Uni Planner</h2>
+    <p><b>Know when you'll graduate, and what to register every semester.</b> Upload your record PDF from the university system and Fasli builds your route semester by semester, checking prerequisites and credit limits all the way to graduation. Your day, timetable, tasks and marks sit alongside it. Made for Arab Open University students in Kuwait, Saudi Arabia, Jordan, Oman, Bahrain, Lebanon and Egypt.</p>
+    <div class="tabs">
+      <figure><img class="shot" src="img/en_1_today.webp" width="540" height="1168" loading="lazy" alt="Today screen"><figcaption><b>Today</b><span>Next lecture, did you make it, what's coming up</span></figcaption></figure>
+      <figure><img class="shot" src="img/en_2_schedule.webp" width="540" height="1168" loading="lazy" alt="Schedule screen"><figcaption><b>Schedule</b><span>Your day and week, plus Ramadan times</span></figcaption></figure>
+      <figure><img class="shot" src="img/en_5_tasks.webp" width="540" height="1168" loading="lazy" alt="Tasks screen"><figcaption><b>Tasks</b><span>TMAs, exams and official AOU dates</span></figcaption></figure>
+      <figure><img class="shot" src="img/en_4_marks.webp" width="540" height="1168" loading="lazy" alt="Marks screen"><figcaption><b>Marks</b><span>Projected GPA, courses, attendance, focus</span></figcaption></figure>
+      <figure><img class="shot" src="img/en_3_plan.webp" width="540" height="1168" loading="lazy" alt="Plan screen"><figcaption><b>Plan</b><span>Am I on track, and what to take next</span></figcaption></figure>
+    </div>
+    <ul>
+      <li>Graduation plan with fastest, balanced and lightest routes; save and compare up to 3, readable offline</li>
+      <li>Today: your next lecture with a countdown, and a quick "did you make it?" after class to keep absences right</li>
+      <li>A task ledger for TMAs and exams with days left, plus official AOU dates</li>
+      <li>Import your transcript, registration form, a timetable screenshot or a course syllabus instead of typing</li>
+      <li>Final-mark calculator (TMA + MTA), at-risk warnings before the drop deadline, GPA goal and academic standing</li>
+      <li>Exam day help, missed-exam and appeal steps, an opt-in finals revision plan and a focus timer</li>
+      <li>Reminders with quiet hours, Ramadan timetable and a Sunday weekly brief</li>
+      <li>Light, dark or follow the phone, four colours, and a backup file you keep</li>
+    </ul>
+    <p>Every tool is free at launch, in English and Arabic, on phones and tablets. We never ask for your university password.</p>
+    <p><b>Join the test:</b> we're looking for Android users with a Gmail address who can keep the app installed for 14 days. <a href="mailto:fasli.planner@gmail.com?subject=Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0APhone%3A%20%0A">Email us to join</a> (fasli.planner@gmail.com).</p>
+  </div>
+</section>
+
+<footer>
+  <div class="in">
+    <p class="disc">فصلي تطبيق مستقل، غير تابع للجامعة العربية المفتوحة ولا معتمد منها. تأكّد دائماً من المواعيد والقرارات مع جامعتك ومرشدك الأكاديمي.</p>
+    <p class="disc" lang="en" dir="ltr">Fasli is an independent app, not affiliated with or endorsed by Arab Open University. Always confirm dates and decisions with your university and academic advisor.</p>
+    <p><a href="privacy/">سياسة الخصوصية · Privacy</a> · <a href="delete-account/">حذف الحساب · Delete account</a> · fasli.planner@gmail.com · Instagram <a href="https://www.instagram.com/fasliplanner/">@fasliplanner</a></p>
+    <p>Screens show a sample student, not real data · الشاشات ببيانات تجريبية</p>
+    <p>© 2026 Fasli</p>
+  </div>
+</footer>
+</body>
+</html>
