@@ -38,7 +38,10 @@ h1 em{font-style:normal;color:var(--gold)}
 .hero p{margin:0 0 22px;opacity:.93;font-size:19px;max-width:34em}
 .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none}
-.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.btn:focus-visible,a:focus-visible,.tabs:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;z-index:10;background:var(--gold);color:#1b2433;padding:10px 16px;border-radius:6px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 .btn-gold{background:var(--gold);color:#1b2433}
 .btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}
 .small{font-size:14px;opacity:.85}
@@ -79,6 +82,7 @@ footer p{margin:0}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 <header class="hero">
   <div class="in">
     <nav>
@@ -100,12 +104,13 @@ footer p{margin:0}
     </div>
   </div>
 </header>
+<main id="main">
 
 <section id="tabs">
   <div class="in">
     <h2>خمس شاشات، كل وحدة لها شغلة</h2>
     <p class="lead">اليوم والجدول والمهام والدرجات والخطة. والأدوات الإضافية مرتّبة داخلها، تطلع لك لما تحتاجها بس.</p>
-    <div class="tabs">
+    <div class="tabs" tabindex="0" role="region" aria-label="شاشات فصلي">
       <figure><img class="shot" src="img/ar_1_today.webp" width="540" height="1168" loading="lazy" alt="شاشة اليوم"><figcaption><b>اليوم</b><span>المحاضرة القادمة، وهل حضرت؟، والمواعيد القريبة</span></figcaption></figure>
       <figure><img class="shot" src="img/ar_2_schedule.webp" width="540" height="1168" loading="lazy" alt="شاشة الجدول"><figcaption><b>الجدول</b><span>يومك وأسبوعك، وجدول رمضان</span></figcaption></figure>
       <figure><img class="shot" src="img/ar_5_tasks.webp" width="540" height="1168" loading="lazy" alt="شاشة المهام والاختبارات"><figcaption><b>المهام</b><span>الواجبات والاختبارات ومواعيد الجامعة الرسمية</span></figcaption></figure>
@@ -167,7 +172,7 @@ footer p{margin:0}
   <div class="in">
     <h2>Fasli – Uni Planner</h2>
     <p><b>Know when you'll graduate, and what to register every semester.</b> Upload your record PDF from the university system and Fasli builds your route semester by semester, checking prerequisites and credit limits all the way to graduation. Your day, timetable, tasks and marks sit alongside it. Made for university students in Kuwait, Saudi Arabia, Jordan, Oman, Bahrain, Lebanon and Egypt.</p>
-    <div class="tabs">
+    <div class="tabs" tabindex="0" role="region" aria-label="Fasli screens">
       <figure><img class="shot" src="img/en_1_today.webp" width="540" height="1168" loading="lazy" alt="Today screen"><figcaption><b>Today</b><span>Next lecture, did you make it, what's coming up</span></figcaption></figure>
       <figure><img class="shot" src="img/en_2_schedule.webp" width="540" height="1168" loading="lazy" alt="Schedule screen"><figcaption><b>Schedule</b><span>Your day and week, plus Ramadan times</span></figcaption></figure>
       <figure><img class="shot" src="img/en_5_tasks.webp" width="540" height="1168" loading="lazy" alt="Tasks screen"><figcaption><b>Tasks</b><span>TMAs, exams and official university dates</span></figcaption></figure>
@@ -188,6 +193,7 @@ footer p{margin:0}
     <p><b>Join the test:</b> we're looking for Android users with a Gmail address who can keep the app installed for 14 days. <a href="mailto:fasli.planner@gmail.com?subject=Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0APhone%3A%20%0A">Email us to join</a> (fasli.planner@gmail.com).</p>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="in">
