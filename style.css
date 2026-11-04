@@ -1,17 +1,25 @@
+/* Fasli site: policy, terms, support and delete-account pages */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=El+Messiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 :root {
-  --bg: #ffffff;
-  --text: #1d2433;
-  --muted: #5b6475;
-  --accent: #1f6f5c;
-  --line: #e3e6ec;
+  --bg: #F8F7F3;
+  --text: #1B2433;
+  --muted: #5A6577;
+  --accent: #3D5A80;
+  --gold: #E0A83F;
+  --gold-ink: #8A5E0E;
+  --line: #DAD8CF;
+  --ink: #1E2B42;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #12161d;
-    --text: #e8ebf0;
-    --muted: #a3abb8;
-    --accent: #5cc4a7;
-    --line: #2a313c;
+    --bg: #11161E;
+    --text: #E7EAEF;
+    --muted: #A3ACBA;
+    --accent: #9CB8DE;
+    --gold-ink: #E9B95A;
+    --line: #2A3342;
+    color-scheme: dark;
   }
 }
 * { box-sizing: border-box; }
@@ -19,17 +27,27 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+  font: 16.5px/1.7 "IBM Plex Sans", "IBM Plex Sans Arabic", -apple-system, "Segoe UI", Tahoma, sans-serif;
+  border-top: 4px solid var(--ink);
 }
-main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 24px; }
-.brand { font-weight: 700; font-size: 20px; color: var(--accent); text-decoration: none; }
-nav a { color: var(--accent); margin-inline-start: 16px; text-decoration: none; }
-h1 { font-size: 28px; line-height: 1.3; margin: 0 0 4px; }
-h2 { font-size: 19px; margin: 32px 0 8px; }
-h3 { font-size: 16px; margin: 20px 0 4px; }
+main { max-width: 760px; margin: 0 auto; padding: 28px 20px 72px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 40px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font: 400 22px/1 "DM Serif Display", "El Messiri", Georgia, serif; color: var(--text); text-decoration: none; }
+.brand::before { content: ""; width: 30px; height: 30px; border-radius: 7px; background: url(icon.svg) center/cover; flex: none; }
+nav { display: flex; gap: 6px; }
+nav a { color: var(--muted); text-decoration: none; font-size: 14px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; }
+nav a:hover { color: var(--text); border-color: var(--gold); }
+h1, h2, h3 { font-family: "DM Serif Display", "El Messiri", Georgia, serif; font-weight: 400; letter-spacing: -.005em; text-wrap: balance; }
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: "El Messiri", "IBM Plex Sans Arabic", serif; font-weight: 700; letter-spacing: 0; }
+h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.15; margin: 0 0 8px; }
+h2 { font-size: 24px; line-height: 1.3; margin: 40px 0 10px; padding-top: 18px; border-top: 1px solid var(--line); }
+h3 { font-size: 19px; margin: 26px 0 6px; }
 .updated, .note { color: var(--muted); font-size: 14px; }
-a { color: var(--accent); }
-section + section { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 32px; }
-[dir="rtl"] { font-size: 17px; }
-footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 48px; padding-top: 16px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--gold); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { border-bottom: 1px solid var(--line); padding: 8px 6px; text-align: start; vertical-align: top; }
+section + section { border-top: 2px solid var(--text); margin-top: 64px; padding-top: 40px; }
+[dir="rtl"] { font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", Tahoma, sans-serif; font-size: 17.5px; line-height: 1.9; }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 56px; padding-top: 18px; }
