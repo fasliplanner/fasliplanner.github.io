@@ -152,40 +152,72 @@
       var week = p > 0.985 ? 15 : 1 + Math.floor(p * 13.999);
       if (week !== lastWeek) { lastWeek = week; wk.textContent = week > 14 ? wk.dataset.finals : wk.dataset.fmt.replace('{}', week); }
     }
-    if (story) {
-      var r = story.getBoundingClientRect(), span = r.height - vh, sp = clamp(-r.top / Math.max(1, span), 0, 0.9999);
-      var n = chaps.length, i = Math.floor(sp * n), k = sp * n - i;
-      setChapter(i);
-      var ws = words[i], lit = Math.round(clamp(k * 1.6, 0, 1) * ws.length);
-      if (!reduce && lit !== lastLit[i]) { lastLit[i] = lit; ws.forEach(function (s, j) { s.classList.toggle('lit', j < lit); }); }
-      var kq = Math.round(k * 200) / 200;
-      if (kq !== lastK[i]) { lastK[i] = kq; widget(chaps[i], k); }
-      if (halo) halo.style.setProperty('--p', sp.toFixed(3));
-    }
-    if (route && plen) {
-      var rr = route.getBoundingClientRect(), sr = rsvg.getBoundingClientRect();
-      if (!samples || sr.width !== sw || sr.height !== shh) build(sr);
-      var q = clamp((vh * 0.6 - rr.top) / rr.height, 0, 1);
-      var idx = Math.round(q * (samples.length - 1)), s = samples[idx];
-      rdraw.style.strokeDashoffset = (total - s.l).toFixed(1);
-      var dx = sr.left - rr.left + s.x, dy = s.y;
-      rdot.style.setProperty('--dx', dx.toFixed(1) + 'px'); rdot.style.setProperty('--dy', dy.toFixed(1) + 'px');
-      stations.forEach(function (st) { st.classList.toggle('on', dy + 40 >= st.offsetTop); });
-    }
   }
+
+  /* ---------- app story: plays by itself ---------- */
+  var DUR = 6000, si = 0, elapsed = 0, last = 0, visible = false, hoverPause = false;
+  function showChapter(i, k) {
+    setChapter(i);
+    var ws = words[i], lit = reduce ? ws.length : Math.round(clamp(k * 1.8, 0, 1) * ws.length);
+    if (lit !== lastLit[i]) { lastLit[i] = lit; ws.forEach(function (s, j) { s.classList.toggle('lit', j < lit); }); }
+    var kq = Math.round(k * 200) / 200;
+    if (kq !== lastK[i]) { lastK[i] = kq; widget(chaps[i], k); }
+    if (railMark) railMark.style.setProperty('--t', k.toFixed(3));
+  }
+  function go(i) { si = (i + chaps.length) % chaps.length; elapsed = 0; lastLit[si] = -1; lastK[si] = -1; showChapter(si, reduce ? 1 : 0); }
+  function loop(now) {
+    var dt = last ? Math.min(100, now - last) : 0; last = now;
+    if (visible && !hoverPause && !document.hidden && !reduce) {
+      elapsed += dt;
+      var k = elapsed / DUR;
+      if (k >= 1) go(si + 1); else showChapter(si, k);
+    }
+    requestAnimationFrame(loop);
+  }
+  if (story) {
+    go(0);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.35 }).observe(story);
+    else visible = true;
+    var copy = $('.story-copy');
+    if (fine && copy) { copy.addEventListener('pointerenter', function () { hoverPause = true; }); copy.addEventListener('pointerleave', function () { hoverPause = false; }); }
+    requestAnimationFrame(loop);
+  }
+
+  /* ---------- graduation route: draws itself when it comes into view ---------- */
+  var rq = 0, sr0 = null;
+  function placeRoute(q) {
+    var rr = route.getBoundingClientRect(), sr = rsvg.getBoundingClientRect();
+    if (!samples || sr.width !== sw || sr.height !== shh) build(sr);
+    sr0 = sr;
+    var s = samples[Math.round(q * (samples.length - 1))];
+    rdraw.style.strokeDashoffset = (total - s.l).toFixed(1);
+    var dx = sr.left - rr.left + s.x, dy = s.y;
+    rdot.style.setProperty('--dx', dx.toFixed(1) + 'px'); rdot.style.setProperty('--dy', dy.toFixed(1) + 'px');
+    stations.forEach(function (st) { st.classList.toggle('on', dy + 40 >= st.offsetTop); });
+  }
+  if (route && plen) {
+    placeRoute(0);
+    var started = false;
+    var startRoute = function () {
+      if (started) return; started = true;
+      if (reduce) { rq = 1; placeRoute(1); return; }
+      var s0 = performance.now(), D = 5200;
+      (function step(now) { var x = clamp((now - s0) / D, 0, 1); rq = x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; placeRoute(rq); if (x < 1) requestAnimationFrame(step); })(s0);
+    };
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { if (es[0].isIntersecting) startRoute(); }, { threshold: 0.2 }).observe(route);
+    else startRoute();
+  }
+
   var ticking = false;
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; frame(); }); } }
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function () { cur = -1; onScroll(); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { cur = -1; frame(); });
+  window.addEventListener('resize', function () { var c = cur; cur = -1; setChapter(c < 0 ? 0 : c); if (route && plen) placeRoute(rq); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { var c = cur; cur = -1; setChapter(c < 0 ? 0 : c); });
   frame();
 
-  /* rail: tap a chapter to jump to it */
+  /* rail: tap a chapter to show it */
   rail.forEach(function (li, j) {
     li.style.cursor = 'pointer';
-    li.addEventListener('click', function () {
-      var top = story.offsetTop + (story.offsetHeight - window.innerHeight) * (j + 0.3) / chaps.length;
-      window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
-    });
+    li.addEventListener('click', function () { go(j); });
   });
 })();

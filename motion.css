@@ -274,7 +274,6 @@
 }
 @media (max-height:760px) and (max-width:960px){
   .story-grid{padding-block:70px 96px;gap:12px}
-  .story-stage{height:calc(var(--vh) * .34)}
   .days{margin-top:8px}.days li{gap:3px}
   .chap .fill{-webkit-line-clamp:3}
   .inst .big{margin:2px 0 6px}.inst .big .num{font-size:30px}
@@ -333,3 +332,156 @@
   .fa-line{display:none}
 }
 @media (prefers-contrast:more) and (prefers-color-scheme:dark){:root{--muted:#D5DAE2;--rule:#6E7684}}
+
+/* ---------- story plays by itself (not scroll-pinned) ---------- */
+.story{height:auto;padding-block:110px 96px}
+.story-pin{position:relative;top:auto;height:auto;overflow:visible;display:block}
+.rail{position:relative;bottom:auto;left:auto;transform:none;margin:48px auto 0;width:max-content;max-width:calc(100% - 32px)}
+.rail-mark::after{content:"";position:absolute;inset-inline:16px;bottom:4px;height:2px;border-radius:1px;background:var(--gold);transform-origin:left;transform:scaleX(var(--t,0))}
+[dir=rtl] .rail-mark::after{transform-origin:right}
+@media (prefers-reduced-motion:reduce){.rail-mark::after{display:none}}
+@media (max-width:960px){
+  .story{padding-block:80px 64px}
+  .story-grid{height:auto;padding-block:0;grid-template-rows:auto auto;gap:22px}
+  .story-copy{height:auto}
+  .story-copy .eyebrow{display:flex}
+  .chaps{position:relative;inset:auto;min-height:410px}
+  .story-stage{height:min(430px,52vh)}
+  .rail{margin-top:28px}
+}
+@media (max-width:380px){.chaps{min-height:440px}}
+
+/* =========================================================
+   PREMIUM PASS (4 Nov): grain, hairlines, layered depth,
+   spring motion, ticket redesign, footer wordmark
+   ========================================================= */
+:root{
+  --spring:cubic-bezier(.2,.8,.2,1);
+  --ring:0 0 0 1px rgba(30,43,66,.07);
+  --lift:0 1px 1px rgba(30,43,66,.04),0 4px 8px -2px rgba(30,43,66,.06),0 18px 36px -12px rgba(30,43,66,.14);
+  --lift-dark:0 1px 1px rgba(0,0,0,.2),0 8px 16px -6px rgba(0,0,0,.35),0 30px 60px -20px rgba(0,0,0,.55);
+  --hi:inset 0 1px 0 rgba(255,255,255,.06);
+}
+@supports (transition-timing-function:linear(0,1)){
+  :root{--spring:linear(0,.06 2.4%,.33 7.6%,.76 15.6%,.95 21.4%,1.03 27.5%,1.04 31.3%,1.03 36%,1.004 47.5%,.997 58%,1)}
+}
+/* film grain: tactile paper, static, very faint */
+body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme:dark){body::after{mix-blend-mode:screen;opacity:.035;filter:invert(1)}}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more){body::after{display:none}}
+
+/* type: tighter display, calmer body */
+h1,h2,h3{letter-spacing:-.018em;font-kerning:normal}
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3{letter-spacing:0}
+.hero h1{letter-spacing:-.028em}
+:lang(ar) .hero h1{letter-spacing:0}
+.lede{max-width:34em}
+h2{margin-bottom:26px}
+.eyebrow{font-weight:500;letter-spacing:.2em}
+:lang(ar) .eyebrow{letter-spacing:0}
+
+/* more air */
+section{padding-block:150px}
+.story{padding-block:150px 120px}
+.route-sec{padding-bottom:100px}
+@media (max-width:960px){section{padding-block:96px}.story{padding-block:96px 72px}}
+
+/* hero: vignette and calmer rules */
+.hero::before{background:repeating-linear-gradient(to bottom,transparent 0 63px,rgba(243,241,234,.035) 63px 64px),radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(0,0,0,.28))}
+.top{border-bottom-color:rgba(243,241,234,.09)}
+
+/* buttons: crafted, not flat */
+.btn{border-radius:999px;padding:15px 26px;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(0,0,0,.12),0 8px 20px -10px rgba(224,168,63,.65);letter-spacing:.005em}
+.btn:hover{background:#E8B24C}
+.slip .btn{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 24px -12px rgba(30,43,66,.7)}
+.btn-sm{padding:9px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.top nav .lang{border-color:rgba(243,241,234,.2)}
+
+/* phone: machined edge */
+.phone{background:linear-gradient(145deg,#2A3446,#0B1019 40%,#0B1019 60%,#252F40);
+  box-shadow:0 0 0 1px rgba(255,255,255,.07) inset,0 0 0 1.5px #06090F,var(--lift-dark)}
+.split .phone,.story-phone{box-shadow:0 0 0 1px rgba(255,255,255,.07) inset,0 0 0 1.5px #06090F,var(--lift)}
+@media (max-width:960px){.story-stage .phone{box-shadow:0 0 0 1px rgba(255,255,255,.07) inset,0 0 0 1.5px #06090F,var(--lift)}}
+
+/* cards and instruments: hairline + layered depth */
+.fcard{border:0;box-shadow:var(--ring),var(--lift-dark);border-radius:12px}
+.fcard.c1{box-shadow:0 0 0 1px rgba(243,241,234,.1),var(--hi),var(--lift-dark)}
+.inst{border:0;box-shadow:var(--ring),var(--lift);border-radius:14px}
+.rail{border:0;box-shadow:var(--ring),var(--lift)}
+@media (prefers-color-scheme:dark){.inst,.rail{box-shadow:0 0 0 1px rgba(243,241,234,.08),var(--hi),var(--lift-dark);background:var(--paper-2)}}
+@media (prefers-contrast:more){.fcard,.inst,.rail{box-shadow:none;border:1.5px solid var(--text)}}
+
+/* spring: things settle from where they start */
+.chap{transition:opacity .45s ease,transform .9s var(--spring)}
+.story-phone img{transition:opacity .5s ease,transform .9s var(--spring)}
+.rail-mark{transition:left .6s var(--spring),width .6s var(--spring)}
+.stamp{transition:transform .7s var(--spring),opacity .15s}
+.station{transition:opacity .6s ease,transform .8s var(--spring)}
+.rise{transition:opacity .9s ease,transform 1s var(--spring)}
+.days li{transition:background .3s,border-color .3s,color .3s,transform .5s var(--spring)}
+.days li.on{transform:translateY(-3px)}
+.inst-path li.ok .dot{animation:tick .5s var(--spring)}
+@keyframes tick{from{transform:scale(.4)}to{transform:none}}
+
+/* sticky bar: content fades under it */
+.bar-top{background:rgba(22,32,47,.86);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.bar-top::after{content:"";position:absolute;inset-inline:0;top:100%;height:22px;pointer-events:none;background:linear-gradient(rgba(22,32,47,.18),transparent)}
+@media (prefers-reduced-transparency:reduce){.bar-top{background:var(--ink-2)}.bar-top::after{display:none}}
+
+/* section joins: small 8-point star on the rule */
+.marquee{position:relative}
+.cat h3{border-top-width:1px}
+
+/* ---------- ticket, redesigned ---------- */
+.join{background:var(--paper-2)}
+.slip{grid-template-columns:240px minmax(0,1fr);border:0;border-radius:18px;background:var(--paper);box-shadow:var(--ring),var(--lift);overflow:visible}
+.slip .stub{padding:34px 28px 28px;border-inline-end:0;display:flex;flex-direction:column;align-items:flex-start;gap:0;justify-content:flex-start;
+  background:var(--ink);color:var(--on-ink);border-start-start-radius:18px;border-end-start-radius:18px;position:relative}
+.slip .stub::before,.slip .stub::after{inset-inline-end:-11px;width:22px;height:22px;background:var(--paper-2);border:0;clip-path:none;box-shadow:none}
+.slip .stub::before{top:-11px}
+.slip .stub::after{bottom:-11px}
+.slip .seal{width:52px;height:52px;border-radius:12px;box-shadow:0 0 0 1px rgba(243,241,234,.12);margin-bottom:26px}
+.slip .stub .k{color:var(--gold);margin-bottom:8px}
+.slip .stub .big{font-size:40px;color:var(--on-ink);opacity:1!important;margin-bottom:6px}
+:lang(ar) .slip .stub .big{font-size:32px}
+.slip .stub .k2{font-size:14px;color:var(--on-ink-muted)}
+.slip .serial{margin-top:auto;padding-top:28px;font-size:11px;letter-spacing:.18em;color:var(--on-ink-muted)}
+.slip .barcode{display:block;width:100%;height:34px;margin-top:10px;opacity:.55;
+  background:repeating-linear-gradient(90deg,var(--on-ink) 0 1px,transparent 1px 3px,var(--on-ink) 3px 5px,transparent 5px 6px,var(--on-ink) 6px 7px,transparent 7px 10px,var(--on-ink) 10px 13px,transparent 13px 14px)}
+[dir] .slip.torn .stub{transform:none}
+.slip .body{position:relative;padding:48px 52px 44px;border-inline-start:2px dashed var(--rule)}
+.slip h2{max-width:calc(100% - 150px)}
+.admit{position:absolute;top:34px;inset-inline-end:34px;inset-inline-start:auto;z-index:1;
+  border:1.5px solid var(--gold-ink);color:var(--gold-ink);border-radius:8px;padding:8px 14px;font:600 11px/1 var(--sans);letter-spacing:.22em;
+  transform:rotate(-8deg) scale(1.8);opacity:0;transition:transform .7s var(--spring) .45s,opacity .15s .45s;
+  box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px rgba(138,94,14,.35)}
+:lang(ar) .admit{letter-spacing:0;font-size:13px}
+.slip.torn .admit{transform:rotate(-8deg) scale(1);opacity:.92}
+.slip .stub .admit{display:none}
+@media (max-width:720px){
+  .slip{grid-template-columns:1fr}
+  .slip .stub{border-radius:18px 18px 0 0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:24px}
+  .slip .seal{width:44px;height:44px;margin:0}
+  .slip .stub .k{margin:0;width:calc(100% - 60px)}
+  .slip .stub .big{font-size:32px;margin:0}
+  .slip .serial{margin:0;padding:0;width:100%}
+  .slip .barcode{height:24px;margin-top:4px}
+  .slip .stub::before{top:auto;bottom:-11px;inset-inline-start:-11px;inset-inline-end:auto}
+  .slip .stub::after{bottom:-11px;inset-inline-end:-11px}
+  .slip .body{border-inline-start:0;border-top:2px dashed var(--rule);padding:34px 24px 30px}
+  .slip h2{max-width:none;padding-top:44px}
+  .admit{top:24px;inset-inline-end:22px}
+}
+
+/* ---------- footer wordmark ---------- */
+footer{overflow:hidden;padding-bottom:0}
+.mega{font:400 clamp(96px,19vw,270px)/.78 var(--display);letter-spacing:-.04em;text-align:center;color:transparent;
+  -webkit-text-stroke:1px var(--rule);margin-top:12px;transform:translateY(12%);user-select:none}
+:lang(ar) .mega{font-family:"El Messiri",serif;font-weight:700;letter-spacing:0;line-height:1;transform:translateY(18%)}
+@media (prefers-contrast:more){.mega{-webkit-text-stroke-color:var(--text)}}
+/* never scroll sideways (RTL overflow from decorative layers) */
+html,body{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+.skip{max-width:calc(100vw - 24px)}
+@media (prefers-color-scheme:dark){.slip .stub{background:#26354F}}
