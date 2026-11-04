@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -24,31 +24,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="motion.css">
+<script>document.documentElement.className='js';</script>
 </head>
 <body>
 <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+<div class="bar-top" aria-hidden="true">
+  <div class="wrap">
+    <a class="brand" href="" tabindex="-1"><img class="tile" src="icon.svg" alt="" width="34" height="34"><span class="wm-ar">فصلي الجامعي</span></a>
+    <div class="weekchip"><span class="wk" data-fmt="الأسبوع {} من 14" data-finals="النهائيات">الأسبوع 1 من 14</span><span class="mr"><i></i></span></div>
+    <a class="btn btn-sm" href="#join" tabindex="-1">انضم للتجربة</a>
+  </div>
+  <span class="readbar"></span>
+</div>
+
 <header class="hero">
+  <canvas class="dust" aria-hidden="true"></canvas>
+  <svg class="fa-line" viewBox="40 0 500 470" aria-hidden="true"><path pathLength="1" d="M262 266C262 200.83 314.83 148 380 148C445.17 148 498 200.83 498 266C498 372 430 432 330 432H200C120 432 70 372 70 290C70 273.43 83.43 260 100 260C116.57 260 130 273.43 130 290C130 340 160 372 200 372H240V372.6H326C352 372.6 386 366 404 355C340 361 283 346 269 306H268.95C264.45 293.51 262 280.04 262 266ZM330 262C330 289.61 352.39 312 380 312C407.61 312 430 289.61 430 262C430 234.39 407.61 212 380 212C352.39 212 330 234.39 330 262Z"/><circle class="fa-dot" cx="380" cy="78" r="47"/><path class="fa-rule" pathLength="1" d="M40 462H540"/></svg>
   <div class="wrap">
     <div class="top">
       <a class="brand" href="" aria-label="Fasli"><img class="tile" src="icon.svg" alt="" width="34" height="34"><span class="wm-ar">فصلي الجامعي</span></a>
-      <nav aria-label="الأقسام"><a href="#plan">الخطة</a><a href="#screens">الشاشات</a><a href="#data">الخصوصية</a><a href="#join">انضم للتجربة</a><a class="lang" href="en/" lang="en" hreflang="en">English</a></nav>
+      <nav aria-label="الأقسام"><a href="#screens">الشاشات</a><a href="#plan">الخطة</a><a href="#data">الخصوصية</a><a href="#join">انضم للتجربة</a><a class="lang" href="en/" lang="en" hreflang="en">English</a></nav>
     </div>
     <div class="hero-grid">
-      <div>
-        <p class="eyebrow">مخطط جامعي · أندرويد</p>
-        <h1>شهادتك،<br><em>فصلًا بعد فصل.</em></h1>
-        <p class="lede">يجمع فصلي حياتك الجامعية في مكان واحد: جدولك، والواجبات (TMA) والاختبارات، ودرجاتك ومعدلك، وخطة فصلًا بفصل حتى التخرج.</p>
-        <div class="actions">
-          <a class="btn" href="#join">انضم لتجربة التطبيق</a>
-          <a class="textlink" href="#screens">شاهد الشاشات <span class="arrow" aria-hidden="true">→</span></a>
+      <div class="hero-copy">
+        <p class="eyebrow enter" style="--d:0">مخطط جامعي · أندرويد</p>
+        <h1 aria-label="شهادتك، فصلًا بعد فصل."><span class="w"><span style="--d:0">شهادتك،</span></span> <br> <em><span class="w"><span style="--d:1">فصلًا</span></span></em> <em><span class="w"><span style="--d:2">بعد</span></span></em> <em><span class="w"><span style="--d:3">فصل.</span></span></em></h1>
+        <p class="lede enter" style="--d:6">يجمع فصلي حياتك الجامعية في مكان واحد: جدولك، والواجبات (TMA) والاختبارات، ودرجاتك ومعدلك، وخطة فصلًا بفصل حتى التخرج.</p>
+        <div class="actions enter" style="--d:7">
+          <a class="btn magnet" href="#join"><span>انضم لتجربة التطبيق</span></a>
+          <a class="textlink" href="#app">شاهد الشاشات <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <ul class="facts"><li>مجاني</li><li>عربي وإنجليزي</li><li>فاتح وداكن</li><li>بلا إعلانات</li></ul>
-        <p class="where">لطلاب الجامعات في الكويت والسعودية والأردن وعُمان والبحرين ولبنان ومصر.</p>
+        <ul class="facts enter" style="--d:8"><li>مجاني</li><li>عربي وإنجليزي</li><li>فاتح وداكن</li><li>بلا إعلانات</li></ul>
+        <p class="where enter" style="--d:9">لطلاب الجامعات في الكويت والسعودية والأردن وعُمان والبحرين ولبنان ومصر.</p>
       </div>
-      <div class="stage">
-        <div class="phone"><img src="img/ar_1_today.webp" width="720" height="1558" alt="شاشة اليوم في فصلي: المحاضرة القادمة الساعة 5:00 مساءً مع القاعة والمدة والغياب، ومسار اليوم. ببيانات طالبة تجريبية." fetchpriority="high"></div>
-        <span class="note n1" aria-hidden="true"><b>محاضرتك القادمة أولًا</b><i></i></span>
-        <span class="note n2" aria-hidden="true"><b>مسار يومك</b><i></i></span>
+      <div class="stage hero-stage" data-tilt>
+        <div class="phone tilt"><img src="img/ar_1_today.webp" width="720" height="1558" alt="شاشة اليوم في فصلي: المحاضرة القادمة الساعة 5:00 مساءً مع القاعة والمدة والغياب، ومسار اليوم. ببيانات طالبة تجريبية." fetchpriority="high"></div>
+        <div class="fcard c1" data-depth="1.6" aria-hidden="true"><span class="k">اليوم</span><b class="num">24 جمادى الأولى 1448هـ</b><span class="s">الأربعاء 4 نوفمبر 2026</span><span class="perf"></span></div>
+        <div class="fcard c2" data-depth="2.2" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15"/><circle class="arc" cx="18" cy="18" r="15" pathLength="100"/></svg><span><span class="k">TMA 01 · B207A</span><b>بعد 3 أيام</b></span></div>
+        <div class="fcard c3" data-depth="1.2" aria-hidden="true"><span class="k">المعدل</span><b class="num">3.22</b><span class="spark"><i style="--h:40%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:70%"></i><i style="--h:82%"></i></span></div>
+        <div class="fcard c4" data-depth="2.6" aria-hidden="true"><span class="bm"></span><span class="k">أقرب تخرج</span><b>الفصل الثاني 2026/2027</b></div>
       </div>
     </div>
     <div class="ruler" aria-hidden="true">
@@ -59,28 +75,39 @@
 </header>
 
 <main id="main">
-<section id="plan">
-  <div class="wrap split">
-    <div class="rise">
-      <p class="eyebrow">01 · خطة التخرج</p>
-      <h2>الجواب أولًا.</h2>
-      <p class="lede">أضف ملف سجلك (PDF) من نظام الجامعة، أو أدخل مقرراتك يدويًا. يقرأ فصلي الملف، وتراجع كل سطر قبل الحفظ، ثم تفتح الخطة على الفصل الذي يمكنك التخرج فيه. بعدها التفاصيل: ماذا تسجّل في الفصل القادم، وأي المقررات تفتح غيرها، وماذا يتغير إن حذفت مقررًا أو لم تدرس في الصيف.</p>
-      <dl class="ledger"><div><dt>المسارات</dt><span class="dots"></span><dd>الأسرع أو المتوازن أو الأخف</dd></div><div><dt>يراعي</dt><span class="dots"></span><dd>المتطلبات السابقة وحدود الوحدات</dd></div><div><dt>خطط محفوظة</dt><span class="dots"></span><dd>حتى 3 خطط تقارن بينها</dd></div><div><dt>اسأل فيصل</dt><span class="dots"></span><dd>شرح قصير وبسيط لسبب خطتك</dd></div></dl>
-      <p class="fine">الخطة تقدير، فتأكد دائمًا مع جامعتك ومرشدك الأكاديمي.</p>
+<section id="app" class="story" style="--n:5">
+  <div class="story-pin">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <p class="eyebrow">01 · التطبيق</p>
+        <h2 class="sr">خمس شاشات، لكل منها عمل واحد.</h2>
+        <div class="chaps"><article class="chap on" data-i="0"><p class="cnum num">01 <span>/ 05</span></p><h3>محاضرتك القادمة أولًا.</h3><p class="fill"><span>افتح</span> <span>التطبيق،</span> <span>وأول</span> <span>ما</span> <span>تراه</span> <span>موعد</span> <span>محاضرتك</span> <span>القادمة</span> <span>ومكانها</span> <span>ومدتها،</span> <span>وغيابك،</span> <span>وما</span> <span>عليك</span> <span>تسليمه.</span> <span>وفي</span> <span>المساء</span> <span>يعرض</span> <span>لك</span> <span>الغد.</span></p><div class="inst inst-path"><div class="ik">مسار اليوم<span class="iv" data-done="أُنجز {} من 2">أُنجز 0 من 2</span></div><svg class="mini-route" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path d="M8 26 C80 6 140 34 200 18 S270 10 292 26"/></svg><ol><li data-at="0.33"><span class="dot"></span>B207A · 5:00 م</li><li data-at="0.67"><span class="dot"></span>ACT111 · 6:00 م</li></ol></div></article><article class="chap" data-i="1"><p class="cnum num">02 <span>/ 05</span></p><h3>أسبوعك كما تديره جامعتك.</h3><p class="fill"><span>القاعات،</span> <span>حضوري</span> <span>أو</span> <span>عن</span> <span>بُعد،</span> <span>محاضرات</span> <span>كل</span> <span>أسبوع</span> <span>أو</span> <span>في</span> <span>الأسابيع</span> <span>الفردية</span> <span>أو</span> <span>الزوجية،</span> <span>ومحاضرات</span> <span>تعويضية،</span> <span>وجدول</span> <span>رمضان</span> <span>تضبطه</span> <span>مرة</span> <span>واحدة.</span></p><div class="inst inst-week"><div class="ik">الأسبوع 6 · أسبوع فردي</div><ol class="days"><li><b>الأحد</b><i></i><i></i></li><li><b>الاثنين</b><i></i></li><li><b>الثلاثاء</b><i></i><i></i></li><li><b>الأربعاء</b><i></i></li><li><b>الخميس</b><i></i></li></ol></div></article><article class="chap" data-i="2"><p class="cnum num">03 <span>/ 05</span></p><h3>لا موعد يفاجئك.</h3><p class="fill"><span>الواجبات</span> <span>والاختبارات</span> <span>القصيرة</span> <span>والاختبارات</span> <span>حسب</span> <span>الأسبوع،</span> <span>مع</span> <span>الأيام</span> <span>المتبقية،</span> <span>وتنبيه</span> <span>مبكر</span> <span>للأسابيع</span> <span>المزدحمة،</span> <span>والتقويم</span> <span>الأكاديمي</span> <span>الرسمي.</span></p><div class="inst inst-count"><div class="ik">TMA 01 · B207A</div><div class="big"><span class="num" data-from="14" data-to="3">14</span><small>أيام متبقية</small></div><div class="bar"><i></i></div></div></article><article class="chap" data-i="3"><p class="cnum num">04 <span>/ 05</span></p><h3>اعرف ما تحتاجه في النهائي.</h3><p class="fill"><span>أدخل</span> <span>درجات</span> <span>TMA</span> <span>وMTA،</span> <span>واعرف</span> <span>الدرجة</span> <span>التي</span> <span>تحتاجها</span> <span>في</span> <span>النهائي</span> <span>لكل</span> <span>تقدير،</span> <span>مع</span> <span>تنبيه</span> <span>قبل</span> <span>آخر</span> <span>يوم</span> <span>للسحب.</span></p><div class="inst inst-gpa"><div class="ik">المعدل<span class="iv">الهدف 3.50</span></div><div class="big"><span class="num" data-from="0" data-to="3.22" data-dec="2">0.00</span></div><div class="bar"><i></i><em style="inset-inline-start:87.5%"></em></div></div></article><article class="chap" data-i="4"><p class="cnum num">05 <span>/ 05</span></p><h3>ومتى تتخرج.</h3><p class="fill"><span>تفتح</span> <span>شاشة</span> <span>الخطة</span> <span>على</span> <span>الفصل</span> <span>الذي</span> <span>يمكنك</span> <span>التخرج</span> <span>فيه،</span> <span>ثم</span> <span>ما</span> <span>تسجّله</span> <span>بعده.</span></p><div class="inst inst-credits"><div class="ik">وحدات متبقية</div><div class="big"><span class="num" data-from="133" data-to="48">133</span><small>/ 133</small></div><div class="bar"><i></i></div><div class="stamp"><span>أقرب تخرج</span><b>الفصل الثاني 2026/2027</b></div></div></article></div>
+      </div>
+      <div class="story-stage">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="phone story-phone"><img src="img/ar_1_today.webp" width="720" height="1558" alt="شاشة اليوم في فصلي، ببيانات تجريبية" loading="eager" class="on"><img src="img/ar_2_schedule.webp" width="720" height="1558" alt="شاشة الجدول في فصلي، ببيانات تجريبية" loading="lazy" class=""><img src="img/ar_5_tasks.webp" width="720" height="1558" alt="شاشة المهام في فصلي، ببيانات تجريبية" loading="lazy" class=""><img src="img/ar_4_marks.webp" width="720" height="1558" alt="شاشة الدرجات في فصلي، ببيانات تجريبية" loading="lazy" class=""><img src="img/ar_3_plan.webp" width="720" height="1558" alt="شاشة الخطة في فصلي، ببيانات تجريبية" loading="lazy" class=""></div>
+      </div>
     </div>
-    <div class="stage rise"><div class="phone"><img src="img/ar_3_plan.webp" width="720" height="1558" loading="lazy" alt="شاشة الخطة في فصلي: أقرب تخرج ربيع 2027، وباقي 48 وحدة، والمعدل 3.22. ببيانات طالبة تجريبية."></div></div>
+    <ol class="rail" aria-hidden="true"><li class="on">اليوم</li><li class="">الجدول</li><li class="">المهام</li><li class="">الدرجات</li><li class="">الخطة</li><span class="rail-mark"></span></ol>
   </div>
 </section>
 
-<section id="screens" class="tabs-sec">
-  <div class="wrap tabs-grid">
-    <div class="rise">
-      <p class="eyebrow">02 · التطبيق</p>
-      <h2>خمس شاشات، لكل منها عمل واحد.</h2>
-      <p class="lede">الأدوات الإضافية مرتبة داخلها وتظهر عند الحاجة، فيبقى التطبيق هادئًا.</p>
-      <ol class="toc"><li><button type="button" data-shot="img/ar_1_today.webp" data-alt="شاشة اليوم في فصلي، ببيانات تجريبية" aria-pressed="false"><span class="n num">01</span><span class="t">اليوم</span><span class="d">محاضرتك القادمة أولًا: الوقت والقاعة والمدة وغيابك وما عليك تسليمه. وفي المساء يعرض لك الغد.</span></button></li><li><button type="button" data-shot="img/ar_2_schedule.webp" data-alt="شاشة الجدول في فصلي، ببيانات تجريبية" aria-pressed="true"><span class="n num">02</span><span class="t">الجدول</span><span class="d">أسبوعك بالقاعات، حضوري أو عن بُعد، والأسابيع الفردية والزوجية، وأوقات رمضان.</span></button></li><li><button type="button" data-shot="img/ar_5_tasks.webp" data-alt="شاشة المهام في فصلي، ببيانات تجريبية" aria-pressed="false"><span class="n num">03</span><span class="t">المهام</span><span class="d">الواجبات والاختبارات القصيرة والاختبارات حسب الأسبوع، مع الأيام المتبقية وتنبيه مبكر للأسابيع المزدحمة.</span></button></li><li><button type="button" data-shot="img/ar_4_marks.webp" data-alt="شاشة الدرجات في فصلي، ببيانات تجريبية" aria-pressed="false"><span class="n num">04</span><span class="t">الدرجات</span><span class="d">أدخل درجات TMA وMTA واعرف ما تحتاجه في النهائي، ومعدلك مع هدف تسعى إليه.</span></button></li><li><button type="button" data-shot="img/ar_3_plan.webp" data-alt="شاشة الخطة في فصلي، ببيانات تجريبية" aria-pressed="false"><span class="n num">05</span><span class="t">الخطة</span><span class="d">الفصل الذي يمكنك التخرج فيه، وما تسجّله بعده.</span></button></li></ol>
+<section id="plan" class="route-sec">
+  <div class="wrap">
+    <div class="route-head rise">
+      <p class="eyebrow">02 · خطة التخرج</p>
+      <h2>الجواب أولًا.</h2>
+      <p class="lede">يبني فصلي طريقك إلى التخرج فصلًا بفصل، مع مراعاة المتطلبات السابقة وحدود الوحدات في كل خطوة.</p>
     </div>
-    <div class="stage rise"><div class="phone"><img id="tabshot" src="img/ar_2_schedule.webp" width="720" height="1558" loading="lazy" alt="شاشة الجدول في فصلي، ببيانات تجريبية"></div></div>
+    <div class="route">
+      <svg class="route-svg" viewBox="0 0 400 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path class="r-base" d="M200 20 C200 120 320 140 320 240 S120 360 120 460 S300 580 300 680 S200 800 200 880 C200 940 150 965 110 950 C70 935 72 890 110 880"/>
+        <path class="r-draw" d="M200 20 C200 120 320 140 320 240 S120 360 120 460 S300 580 300 680 S200 800 200 880 C200 940 150 965 110 950 C70 935 72 890 110 880"/>
+      </svg>
+      <span class="r-dot" aria-hidden="true"></span>
+      <ol class="stations"><li class="station" style="--y:2%"><span class="sn num">01</span><h3>أضف سجلك</h3><p>ملف سجلك (PDF) من نظام الجامعة، أو أدخل مقرراتك يدويًا. وتراجع كل سطر قبل الحفظ.</p></li><li class="station" style="--y:24%"><span class="sn num">02</span><h3>اعرف أين وصلت</h3><p>الوحدات المنجزة والمتبقية، والمقررات التي تحتاج إعادة، والنتائج المعلّقة، ومعدلك.</p></li><li class="station" style="--y:46%"><span class="sn num">03</span><h3>اختر مسارك</h3><p>الأسرع أو المتوازن أو الأخف. احفظ حتى 3 خطط وقارن بينها.</p></li><li class="station" style="--y:68%"><span class="sn num">04</span><h3>اسأل فيصل: لماذا؟</h3><p>اضغط «اسأل فيصل: لماذا؟» لشرح قصير وبسيط لخطتك.</p></li><li class="station" style="--y:88%"><span class="sn num">05</span><h3>تخرّج</h3><p>الفصل الذي يمكنك التخرج فيه، أول ما تراه في شاشة الخطة.</p></li></ol>
+    </div>
+    <p class="fine rise">الخطة تقدير، فتأكد دائمًا مع جامعتك ومرشدك الأكاديمي.</p>
   </div>
 </section>
 
@@ -90,32 +117,35 @@
       <p class="eyebrow">03 · وفي التطبيق أيضًا</p>
       <h2>التفاصيل الصغيرة، محسوبة.</h2>
     </div>
-    <div class="cat"><div class="rise"><h3>اليوم والأسبوع</h3><ul><li>علّم «لا توجد محاضرة» لتاريخ واحد، أو أضف محاضرة تعويضية</li><li>ساعات انشغالك للعمل أو العائلة، بعيدًا عن أوقات المذاكرة المقترحة</li><li>المحاضرات والاختبارات والمواعيد في تقويم هاتفك</li><li>التاريخ الميلادي والهجري</li></ul></div><div class="rise"><h3>الاختبارات</h3><ul><li>يوم الاختبار: عدّ تنازلي وقائمة تحقق وقاعدة التأخر عن الدخول</li><li>مخطط مراجعة للنهائيات يوزّع ساعات المذاكرة</li><li>التقويم الأكاديمي الرسمي ومواعيد الاختبارات</li><li>عدّ تنازلي على شاشة القفل في أيام المحاضرات والاختبارات</li></ul></div><div class="rise"><h3>الدرجات والوضع الأكاديمي</h3><ul><li>تنبيه قبل آخر يوم للسحب إذا كان مقرر في خطر</li><li>حاسبة معدل مع هدف، وطريق واضح للعودة إلى 2.00</li><li>أغلق الفصل بعد النهائيات بلمسة واحدة</li><li>تقرير تقدّم PDF في صفحة واحدة لأهلك أو جهة الابتعاث</li></ul></div><div class="rise"><h3>التذكيرات والأدوات</h3><ul><li>تذكير قبل المحاضرات والتسليمات والاختبارات، مع «تم» و«بعد ساعتين»</li><li>مؤقت تركيز وإحصاءات مذاكرة أسبوعية</li><li>أدوات (ويدجت) على الشاشة الرئيسية</li><li>خمسة ألوان للتطبيق، على الهاتف والتابلت</li></ul></div></div>
+    <div class="cat"><div class="rise" style="--d:0"><h3>اليوم والأسبوع</h3><ul><li>علّم «لا توجد محاضرة» لتاريخ واحد، أو أضف محاضرة تعويضية</li><li>ساعات انشغالك للعمل أو العائلة، بعيدًا عن أوقات المذاكرة المقترحة</li><li>المحاضرات والاختبارات والمواعيد في تقويم هاتفك</li><li>التاريخ الميلادي والهجري</li></ul></div><div class="rise" style="--d:1"><h3>الاختبارات</h3><ul><li>يوم الاختبار: عدّ تنازلي وقائمة تحقق وقاعدة التأخر عن الدخول</li><li>مخطط مراجعة للنهائيات يوزّع ساعات المذاكرة</li><li>التقويم الأكاديمي الرسمي ومواعيد الاختبارات</li><li>عدّ تنازلي على شاشة القفل في أيام المحاضرات والاختبارات</li></ul></div><div class="rise" style="--d:2"><h3>الدرجات والوضع الأكاديمي</h3><ul><li>تنبيه قبل آخر يوم للسحب إذا كان مقرر في خطر</li><li>حاسبة معدل مع هدف، وطريق واضح للعودة إلى 2.00</li><li>أغلق الفصل بعد النهائيات بلمسة واحدة</li><li>تقرير تقدّم PDF في صفحة واحدة لأهلك أو جهة الابتعاث</li></ul></div><div class="rise" style="--d:3"><h3>التذكيرات والأدوات</h3><ul><li>تذكير قبل المحاضرات والتسليمات والاختبارات، مع «تم» و«بعد ساعتين»</li><li>مؤقت تركيز وإحصاءات مذاكرة أسبوعية</li><li>أدوات (ويدجت) على الشاشة الرئيسية</li><li>خمسة ألوان للتطبيق، على الهاتف والتابلت</li></ul></div></div>
   </div>
 </section>
 
-<section id="data" class="data">
+<div class="marquee" aria-hidden="true"><div class="mq-track"><div class="mq"><span>الأسابيع الفردية والزوجية</span><i aria-hidden="true"></i><span>جدول رمضان</span><i aria-hidden="true"></i><span>العدّ التنازلي للواجبات</span><i aria-hidden="true"></i><span>التاريخ الهجري</span><i aria-hidden="true"></i><span>المحاضرات التعويضية</span><i aria-hidden="true"></i><span>مؤقت التركيز</span><i aria-hidden="true"></i><span>خطة مراجعة النهائيات</span><i aria-hidden="true"></i><span>عدّ تنازلي على شاشة القفل</span><i aria-hidden="true"></i><span>تقرير تقدّم PDF</span><i aria-hidden="true"></i><span>أدوات الشاشة الرئيسية</span><i aria-hidden="true"></i><span>كم أحتاج في النهائي؟</span><i aria-hidden="true"></i><span>فاتح وداكن</span><i aria-hidden="true"></i></div><div class="mq"><span>الأسابيع الفردية والزوجية</span><i aria-hidden="true"></i><span>جدول رمضان</span><i aria-hidden="true"></i><span>العدّ التنازلي للواجبات</span><i aria-hidden="true"></i><span>التاريخ الهجري</span><i aria-hidden="true"></i><span>المحاضرات التعويضية</span><i aria-hidden="true"></i><span>مؤقت التركيز</span><i aria-hidden="true"></i><span>خطة مراجعة النهائيات</span><i aria-hidden="true"></i><span>عدّ تنازلي على شاشة القفل</span><i aria-hidden="true"></i><span>تقرير تقدّم PDF</span><i aria-hidden="true"></i><span>أدوات الشاشة الرئيسية</span><i aria-hidden="true"></i><span>كم أحتاج في النهائي؟</span><i aria-hidden="true"></i><span>فاتح وداكن</span><i aria-hidden="true"></i></div></div></div>
+
+<section id="data" class="data spot">
   <div class="wrap">
     <p class="eyebrow">04 · بياناتك</p>
-    <h2>بياناتك تبقى لك.</h2>
-    <div class="pledges rise"><div><b>بلا حساب</b><p>يعمل فصلي دون تسجيل دخول. سجّل بحساب Google فقط إن أردت النسخ الاحتياطي والمزامنة.</p></div><div><b>يُقرأ على هاتفك أولًا</b><p>تُقرأ ملفات سجلك (PDF) عادةً على هاتفك، ولا يُرسل للتخطيط إلا المقررات والدرجات. وإن تعذّرت قراءة ملف على الهاتف، يُرسل إلى خادمنا ويُحذف فور قراءته.</p></div><div><b>بلا كلمة سر جامعية</b><p>لا يطلب فصلي كلمة سر حسابك الجامعي أبدًا.</p></div><div><b>بلا إعلانات</b><p>احذف بياناتك أو حسابك من الإعدادات في أي وقت.</p></div></div>
+    <h2 class="rise">بياناتك تبقى لك.</h2>
+    <div class="pledges"><div class="rise" style="--d:0"><span class="pn num">01</span><b>بلا حساب</b><p>يعمل فصلي دون تسجيل دخول. سجّل بحساب Google فقط إن أردت النسخ الاحتياطي والمزامنة.</p></div><div class="rise" style="--d:1"><span class="pn num">02</span><b>يُقرأ على هاتفك أولًا</b><p>تُقرأ ملفات سجلك (PDF) عادةً على هاتفك، ولا يُرسل للتخطيط إلا المقررات والدرجات. وإن تعذّرت قراءة ملف على الهاتف، يُرسل إلى خادمنا ويُحذف فور قراءته.</p></div><div class="rise" style="--d:2"><span class="pn num">03</span><b>بلا كلمة سر جامعية</b><p>لا يطلب فصلي كلمة سر حسابك الجامعي أبدًا.</p></div><div class="rise" style="--d:3"><span class="pn num">04</span><b>بلا إعلانات</b><p>احذف بياناتك أو حسابك من الإعدادات في أي وقت.</p></div></div>
     <a class="textlink" href="privacy/#ar">اقرأ سياسة الخصوصية <span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </section>
 
 <section id="join" class="join">
   <div class="wrap">
-    <div class="slip rise">
+    <div class="slip tear">
       <div class="stub">
         <span class="k">تجربة مغلقة</span>
         <span class="big">أندرويد</span>
         <span class="k">مجانًا · 14 يومًا</span>
+        <span class="admit" aria-hidden="true">تذكرة دخول</span>
       </div>
       <div class="body">
         <h2>جرّب فصلي قبل وصوله إلى Google Play.</h2>
         <p>ندعو الطلاب لتجربة فصلي قبل نشره للجميع. التجربة مجانية وتطوعية.</p>
         <ul><li>هاتف أندرويد وبريد Gmail</li><li>أبقِ التطبيق مثبتًا 14 يومًا، ولا يلزم استخدامه كل يوم.</li></ul>
-        <a class="btn" href="mailto:support@fasli.app?subject=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AC%D8%B1%D8%A8%20%D9%81%D8%B5%D9%84%D9%8A%20%2F%20Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%20%2F%20Phone%3A%20%0A">راسلنا للانضمام</a>
+        <a class="btn magnet" href="mailto:support@fasli.app?subject=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AC%D8%B1%D8%A8%20%D9%81%D8%B5%D9%84%D9%8A%20%2F%20Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0A%D9%86%D9%88%D8%B9%20%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%20%2F%20Phone%3A%20%0A"><span>راسلنا للانضمام</span></a>
         <p class="or">أو اكتب إلى support@fasli.app مع بريد Gmail الخاص بك.</p>
       </div>
     </div>
@@ -136,20 +166,6 @@
     <div class="base"><span>© 2026 فصلي</span><span>شهادتك، فصلًا بعد فصل.</span></div>
   </div>
 </footer>
-<script>
-(function(){
-  var img=document.getElementById('tabshot'),btns=document.querySelectorAll('.toc button');
-  btns.forEach(function(b){b.addEventListener('click',function(){
-    if(b.getAttribute('aria-pressed')==='true')return;
-    btns.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
-    img.classList.add('fade');
-    setTimeout(function(){img.onload=function(){img.classList.remove('fade')};img.src=b.dataset.shot;img.alt=b.dataset.alt},180);
-  })});
-  var els=document.querySelectorAll('.rise');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e)});
-})();
-</script>
+<script src="app.js" defer></script>
 </body>
 </html>

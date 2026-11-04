@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -24,31 +24,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../motion.css">
+<script>document.documentElement.className='js';</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+
+<div class="bar-top" aria-hidden="true">
+  <div class="wrap">
+    <a class="brand" href="../en/" tabindex="-1"><img class="tile" src="../icon.svg" alt="" width="34" height="34"><img class="wm" src="../img/wordmark-light.svg" alt="Fasli" width="61" height="24"></a>
+    <div class="weekchip"><span class="wk" data-fmt="Week {} of 14" data-finals="Finals">Week 1 of 14</span><span class="mr"><i></i></span></div>
+    <a class="btn btn-sm" href="#join" tabindex="-1">Join the test</a>
+  </div>
+  <span class="readbar"></span>
+</div>
+
 <header class="hero">
+  <canvas class="dust" aria-hidden="true"></canvas>
+  <svg class="fa-line" viewBox="40 0 500 470" aria-hidden="true"><path pathLength="1" d="M262 266C262 200.83 314.83 148 380 148C445.17 148 498 200.83 498 266C498 372 430 432 330 432H200C120 432 70 372 70 290C70 273.43 83.43 260 100 260C116.57 260 130 273.43 130 290C130 340 160 372 200 372H240V372.6H326C352 372.6 386 366 404 355C340 361 283 346 269 306H268.95C264.45 293.51 262 280.04 262 266ZM330 262C330 289.61 352.39 312 380 312C407.61 312 430 289.61 430 262C430 234.39 407.61 212 380 212C352.39 212 330 234.39 330 262Z"/><circle class="fa-dot" cx="380" cy="78" r="47"/><path class="fa-rule" pathLength="1" d="M40 462H540"/></svg>
   <div class="wrap">
     <div class="top">
       <a class="brand" href="../en/" aria-label="Fasli"><img class="tile" src="../icon.svg" alt="" width="34" height="34"><img class="wm" src="../img/wordmark-light.svg" alt="Fasli" width="61" height="24"></a>
-      <nav aria-label="Sections"><a href="#plan">Plan</a><a href="#screens">Screens</a><a href="#data">Privacy</a><a href="#join">Join the test</a><a class="lang" href="../" lang="ar" hreflang="ar">العربية</a></nav>
+      <nav aria-label="Sections"><a href="#screens">Screens</a><a href="#plan">Plan</a><a href="#data">Privacy</a><a href="#join">Join the test</a><a class="lang" href="../" lang="ar" hreflang="ar">العربية</a></nav>
     </div>
     <div class="hero-grid">
-      <div>
-        <p class="eyebrow">University planner · Android</p>
-        <h1>Your degree, <em>one semester at a time.</em></h1>
-        <p class="lede">Fasli keeps your university life in one place: your timetable, TMAs and exams, your marks and GPA, and a semester-by-semester plan to graduation.</p>
-        <div class="actions">
-          <a class="btn" href="#join">Join the Android test</a>
-          <a class="textlink" href="#screens">See the screens <span class="arrow" aria-hidden="true">→</span></a>
+      <div class="hero-copy">
+        <p class="eyebrow enter" style="--d:0">University planner · Android</p>
+        <h1 aria-label="Your degree, one semester at a time."><span class="w"><span style="--d:0">Your</span></span> <span class="w"><span style="--d:1">degree,</span></span> <em><span class="w"><span style="--d:2">one</span></span></em> <em><span class="w"><span style="--d:3">semester</span></span></em> <em><span class="w"><span style="--d:4">at</span></span></em> <em><span class="w"><span style="--d:5">a</span></span></em> <em><span class="w"><span style="--d:6">time.</span></span></em></h1>
+        <p class="lede enter" style="--d:6">Fasli keeps your university life in one place: your timetable, TMAs and exams, your marks and GPA, and a semester-by-semester plan to graduation.</p>
+        <div class="actions enter" style="--d:7">
+          <a class="btn magnet" href="#join"><span>Join the Android test</span></a>
+          <a class="textlink" href="#app">See the screens <span class="arrow" aria-hidden="true">→</span></a>
         </div>
-        <ul class="facts"><li>Free</li><li>English and Arabic</li><li>Light and dark</li><li>No ads</li></ul>
-        <p class="where">For university students in Kuwait, Saudi Arabia, Jordan, Oman, Bahrain, Lebanon and Egypt.</p>
+        <ul class="facts enter" style="--d:8"><li>Free</li><li>English and Arabic</li><li>Light and dark</li><li>No ads</li></ul>
+        <p class="where enter" style="--d:9">For university students in Kuwait, Saudi Arabia, Jordan, Oman, Bahrain, Lebanon and Egypt.</p>
       </div>
-      <div class="stage">
-        <div class="phone"><img src="../img/en_1_today.webp" width="720" height="1558" alt="Fasli Today screen: the next lecture at 5:00 PM with room, length and absences, and the day’s path. Sample student." fetchpriority="high"></div>
-        <span class="note n1" aria-hidden="true"><b>Next class first</b><i></i></span>
-        <span class="note n2" aria-hidden="true"><b>Today's path</b><i></i></span>
+      <div class="stage hero-stage" data-tilt>
+        <div class="phone tilt"><img src="../img/en_1_today.webp" width="720" height="1558" alt="Fasli Today screen: the next lecture at 5:00 PM with room, length and absences, and the day’s path. Sample student." fetchpriority="high"></div>
+        <div class="fcard c1" data-depth="1.6" aria-hidden="true"><span class="k">Today</span><b class="num">24 Jumada I 1448</b><span class="s">Wed 4 Nov 2026</span><span class="perf"></span></div>
+        <div class="fcard c2" data-depth="2.2" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15"/><circle class="arc" cx="18" cy="18" r="15" pathLength="100"/></svg><span><span class="k">TMA 01 · B207A</span><b>in 3 days</b></span></div>
+        <div class="fcard c3" data-depth="1.2" aria-hidden="true"><span class="k">GPA</span><b class="num">3.22</b><span class="spark"><i style="--h:40%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:70%"></i><i style="--h:82%"></i></span></div>
+        <div class="fcard c4" data-depth="2.6" aria-hidden="true"><span class="bm"></span><span class="k">Earliest graduation</span><b>Spring 2027</b></div>
       </div>
     </div>
     <div class="ruler" aria-hidden="true">
@@ -59,28 +75,39 @@
 </header>
 
 <main id="main">
-<section id="plan">
-  <div class="wrap split">
-    <div class="rise">
-      <p class="eyebrow">01 · Graduation plan</p>
-      <h2>Start with the answer.</h2>
-      <p class="lede">Add your record PDF from the university system, or type your courses in. Fasli reads the file, you check every line, and the Plan tab opens with the term you can graduate. Then come the details: what to take next, which courses unlock others, and what changes if you drop a course or skip a summer.</p>
-      <dl class="ledger"><div><dt>Routes</dt><span class="dots"></span><dd>Fastest, Balanced or Lightest</dd></div><div><dt>Respects</dt><span class="dots"></span><dd>Prerequisites and credit limits</dd></div><div><dt>Saved plans</dt><span class="dots"></span><dd>Up to 3, compared side by side</dd></div><div><dt>Ask Faisal</dt><span class="dots"></span><dd>A short, plain “why” for your plan</dd></div></dl>
-      <p class="fine">Plans are estimates. Always confirm with your university and academic advisor.</p>
+<section id="app" class="story" style="--n:5">
+  <div class="story-pin">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <p class="eyebrow">01 · The app</p>
+        <h2 class="sr">Five tabs. Each does one job.</h2>
+        <div class="chaps"><article class="chap on" data-i="0"><p class="cnum num">01 <span>/ 05</span></p><h3>Your next class, first.</h3><p class="fill"><span>Open</span> <span>the</span> <span>app</span> <span>and</span> <span>the</span> <span>first</span> <span>thing</span> <span>you</span> <span>see</span> <span>is</span> <span>when</span> <span>and</span> <span>where</span> <span>your</span> <span>next</span> <span>lecture</span> <span>is,</span> <span>how</span> <span>long</span> <span>it</span> <span>runs,</span> <span>your</span> <span>absences</span> <span>and</span> <span>what</span> <span>is</span> <span>due.</span> <span>In</span> <span>the</span> <span>evening</span> <span>it</span> <span>shows</span> <span>tomorrow.</span></p><div class="inst inst-path"><div class="ik">Today's path<span class="iv" data-done="{} of 2 done">0 of 2 done</span></div><svg class="mini-route" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true"><path d="M8 26 C80 6 140 34 200 18 S270 10 292 26"/></svg><ol><li data-at="0.33"><span class="dot"></span>B207A · 5:00 PM</li><li data-at="0.67"><span class="dot"></span>ACT111 · 6:00 PM</li></ol></div></article><article class="chap" data-i="1"><p class="cnum num">02 <span>/ 05</span></p><h3>Your week, as your university runs it.</h3><p class="fill"><span>Rooms,</span> <span>online</span> <span>or</span> <span>in</span> <span>person,</span> <span>classes</span> <span>every</span> <span>week</span> <span>or</span> <span>in</span> <span>odd</span> <span>or</span> <span>even</span> <span>weeks,</span> <span>make-up</span> <span>classes,</span> <span>and</span> <span>a</span> <span>Ramadan</span> <span>timetable</span> <span>you</span> <span>set</span> <span>once.</span></p><div class="inst inst-week"><div class="ik">Week 6 · odd week</div><ol class="days"><li><b>Sun</b><i></i><i></i></li><li><b>Mon</b><i></i></li><li><b>Tue</b><i></i><i></i></li><li><b>Wed</b><i></i></li><li><b>Thu</b><i></i></li></ol></div></article><article class="chap" data-i="2"><p class="cnum num">03 <span>/ 05</span></p><h3>Nothing due sneaks up on you.</h3><p class="fill"><span>TMAs,</span> <span>quizzes</span> <span>and</span> <span>exams</span> <span>by</span> <span>week,</span> <span>with</span> <span>days</span> <span>left,</span> <span>busy</span> <span>weeks</span> <span>flagged</span> <span>early</span> <span>and</span> <span>the</span> <span>official</span> <span>academic</span> <span>calendar</span> <span>alongside.</span></p><div class="inst inst-count"><div class="ik">TMA 01 · B207A</div><div class="big"><span class="num" data-from="14" data-to="3">14</span><small>days left</small></div><div class="bar"><i></i></div></div></article><article class="chap" data-i="3"><p class="cnum num">04 <span>/ 05</span></p><h3>Know what you need on the final.</h3><p class="fill"><span>Enter</span> <span>your</span> <span>TMA</span> <span>and</span> <span>MTA</span> <span>marks</span> <span>and</span> <span>see</span> <span>the</span> <span>final</span> <span>mark</span> <span>you</span> <span>need</span> <span>for</span> <span>each</span> <span>grade,</span> <span>with</span> <span>a</span> <span>warning</span> <span>before</span> <span>the</span> <span>last</span> <span>day</span> <span>to</span> <span>drop.</span></p><div class="inst inst-gpa"><div class="ik">GPA<span class="iv">Target 3.50</span></div><div class="big"><span class="num" data-from="0" data-to="3.22" data-dec="2">0.00</span></div><div class="bar"><i></i><em style="inset-inline-start:87.5%"></em></div></div></article><article class="chap" data-i="4"><p class="cnum num">05 <span>/ 05</span></p><h3>And when you graduate.</h3><p class="fill"><span>The</span> <span>Plan</span> <span>tab</span> <span>opens</span> <span>with</span> <span>the</span> <span>term</span> <span>you</span> <span>can</span> <span>graduate,</span> <span>then</span> <span>what</span> <span>to</span> <span>register</span> <span>next.</span></p><div class="inst inst-credits"><div class="ik">Credits to go</div><div class="big"><span class="num" data-from="133" data-to="48">133</span><small>/ 133</small></div><div class="bar"><i></i></div><div class="stamp"><span>Earliest graduation</span><b>Spring 2027</b></div></div></article></div>
+      </div>
+      <div class="story-stage">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="phone story-phone"><img src="../img/en_1_today.webp" width="720" height="1558" alt="Fasli Today screen, sample student" loading="eager" class="on"><img src="../img/en_2_schedule.webp" width="720" height="1558" alt="Fasli Schedule screen, sample student" loading="lazy" class=""><img src="../img/en_5_tasks.webp" width="720" height="1558" alt="Fasli Tasks screen, sample student" loading="lazy" class=""><img src="../img/en_4_marks.webp" width="720" height="1558" alt="Fasli Marks screen, sample student" loading="lazy" class=""><img src="../img/en_3_plan.webp" width="720" height="1558" alt="Fasli Plan screen, sample student" loading="lazy" class=""></div>
+      </div>
     </div>
-    <div class="stage rise"><div class="phone"><img src="../img/en_3_plan.webp" width="720" height="1558" loading="lazy" alt="Fasli Plan screen: earliest graduation Spring 2027, 48 credits to go, GPA 3.22. Sample student."></div></div>
+    <ol class="rail" aria-hidden="true"><li class="on">Today</li><li class="">Schedule</li><li class="">Tasks</li><li class="">Marks</li><li class="">Plan</li><span class="rail-mark"></span></ol>
   </div>
 </section>
 
-<section id="screens" class="tabs-sec">
-  <div class="wrap tabs-grid">
-    <div class="rise">
-      <p class="eyebrow">02 · The app</p>
-      <h2>Five tabs. Each does one job.</h2>
-      <p class="lede">Extra tools sit inside them and appear when you need them, so the app stays calm.</p>
-      <ol class="toc"><li><button type="button" data-shot="../img/en_1_today.webp" data-alt="Fasli Today screen, sample student" aria-pressed="false"><span class="n num">01</span><span class="t">Today</span><span class="d">Your next class first: time, room, length, absences and what is due. In the evening it shows tomorrow.</span></button></li><li><button type="button" data-shot="../img/en_2_schedule.webp" data-alt="Fasli Schedule screen, sample student" aria-pressed="true"><span class="n num">02</span><span class="t">Schedule</span><span class="d">Your week with rooms, online or in person, odd and even weeks, and Ramadan times.</span></button></li><li><button type="button" data-shot="../img/en_5_tasks.webp" data-alt="Fasli Tasks screen, sample student" aria-pressed="false"><span class="n num">03</span><span class="t">Tasks</span><span class="d">TMAs, quizzes and exams by week, with days left and busy weeks flagged early.</span></button></li><li><button type="button" data-shot="../img/en_4_marks.webp" data-alt="Fasli Marks screen, sample student" aria-pressed="false"><span class="n num">04</span><span class="t">Marks</span><span class="d">Enter your TMA and MTA marks and see what you need on the final. GPA with a target.</span></button></li><li><button type="button" data-shot="../img/en_3_plan.webp" data-alt="Fasli Plan screen, sample student" aria-pressed="false"><span class="n num">05</span><span class="t">Plan</span><span class="d">The term you can graduate, and what to register next.</span></button></li></ol>
+<section id="plan" class="route-sec">
+  <div class="wrap">
+    <div class="route-head rise">
+      <p class="eyebrow">02 · Graduation plan</p>
+      <h2>Start with the answer.</h2>
+      <p class="lede">Fasli builds your route to graduation semester by semester, checking prerequisites and credit limits all the way.</p>
     </div>
-    <div class="stage rise"><div class="phone"><img id="tabshot" src="../img/en_2_schedule.webp" width="720" height="1558" loading="lazy" alt="Fasli Schedule screen, sample student"></div></div>
+    <div class="route">
+      <svg class="route-svg" viewBox="0 0 400 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path class="r-base" d="M200 20 C200 120 320 140 320 240 S120 360 120 460 S300 580 300 680 S200 800 200 880 C200 940 150 965 110 950 C70 935 72 890 110 880"/>
+        <path class="r-draw" d="M200 20 C200 120 320 140 320 240 S120 360 120 460 S300 580 300 680 S200 800 200 880 C200 940 150 965 110 950 C70 935 72 890 110 880"/>
+      </svg>
+      <span class="r-dot" aria-hidden="true"></span>
+      <ol class="stations"><li class="station" style="--y:2%"><span class="sn num">01</span><h3>Add your record</h3><p>Your record PDF from the university system, or type your courses in. You check every line before it is saved.</p></li><li class="station" style="--y:24%"><span class="sn num">02</span><h3>See where you stand</h3><p>Credits done and to go, courses to repeat, results still pending, and your GPA.</p></li><li class="station" style="--y:46%"><span class="sn num">03</span><h3>Pick your route</h3><p>Fastest, Balanced or Lightest. Save up to 3 plans and compare them side by side.</p></li><li class="station" style="--y:68%"><span class="sn num">04</span><h3>Ask Faisal why</h3><p>Tap “Ask Faisal why” for a short, plain explanation of your plan.</p></li><li class="station" style="--y:88%"><span class="sn num">05</span><h3>Graduate</h3><p>The term you can graduate, first thing on the Plan tab.</p></li></ol>
+    </div>
+    <p class="fine rise">Plans are estimates. Always confirm with your university and academic advisor.</p>
   </div>
 </section>
 
@@ -90,32 +117,35 @@
       <p class="eyebrow">03 · Also inside</p>
       <h2>The small things, handled.</h2>
     </div>
-    <div class="cat"><div class="rise"><h3>Day and week</h3><ul><li>Mark “No class” for one date, or add a make-up class</li><li>Busy hours for work or family, kept out of suggested study time</li><li>Lectures, exams and deadlines in your phone’s calendar</li><li>Gregorian and Hijri dates</li></ul></div><div class="rise"><h3>Exams</h3><ul><li>Exam day: a countdown, a checklist and the late-entry rule</li><li>A finals revision planner that spreads your study hours</li><li>Official academic calendar and exam dates</li><li>A lock-screen countdown on class and exam days</li></ul></div><div class="rise"><h3>Marks and standing</h3><ul><li>A warning before the last day to drop, if a course may not pass</li><li>GPA calculator with a target, and a clear way back to 2.00</li><li>Close the term after finals in one tap</li><li>A one-page progress report PDF for family or your sponsor</li></ul></div><div class="rise"><h3>Reminders and tools</h3><ul><li>Reminders before lectures, deadlines and exams, with Done and “In 2 hours”</li><li>Focus timer and weekly study stats</li><li>Home-screen widgets</li><li>Five colour themes, on phones and tablets</li></ul></div></div>
+    <div class="cat"><div class="rise" style="--d:0"><h3>Day and week</h3><ul><li>Mark “No class” for one date, or add a make-up class</li><li>Busy hours for work or family, kept out of suggested study time</li><li>Lectures, exams and deadlines in your phone’s calendar</li><li>Gregorian and Hijri dates</li></ul></div><div class="rise" style="--d:1"><h3>Exams</h3><ul><li>Exam day: a countdown, a checklist and the late-entry rule</li><li>A finals revision planner that spreads your study hours</li><li>Official academic calendar and exam dates</li><li>A lock-screen countdown on class and exam days</li></ul></div><div class="rise" style="--d:2"><h3>Marks and standing</h3><ul><li>A warning before the last day to drop, if a course may not pass</li><li>GPA calculator with a target, and a clear way back to 2.00</li><li>Close the term after finals in one tap</li><li>A one-page progress report PDF for family or your sponsor</li></ul></div><div class="rise" style="--d:3"><h3>Reminders and tools</h3><ul><li>Reminders before lectures, deadlines and exams, with Done and “In 2 hours”</li><li>Focus timer and weekly study stats</li><li>Home-screen widgets</li><li>Five colour themes, on phones and tablets</li></ul></div></div>
   </div>
 </section>
 
-<section id="data" class="data">
+<div class="marquee" aria-hidden="true"><div class="mq-track"><div class="mq"><span>Odd and even weeks</span><i aria-hidden="true"></i><span>Ramadan timetable</span><i aria-hidden="true"></i><span>TMA countdowns</span><i aria-hidden="true"></i><span>Hijri dates</span><i aria-hidden="true"></i><span>Make-up classes</span><i aria-hidden="true"></i><span>Focus timer</span><i aria-hidden="true"></i><span>Finals revision plan</span><i aria-hidden="true"></i><span>Lock-screen countdown</span><i aria-hidden="true"></i><span>Progress report PDF</span><i aria-hidden="true"></i><span>Home-screen widgets</span><i aria-hidden="true"></i><span>What do I need on the final?</span><i aria-hidden="true"></i><span>Light and dark</span><i aria-hidden="true"></i></div><div class="mq"><span>Odd and even weeks</span><i aria-hidden="true"></i><span>Ramadan timetable</span><i aria-hidden="true"></i><span>TMA countdowns</span><i aria-hidden="true"></i><span>Hijri dates</span><i aria-hidden="true"></i><span>Make-up classes</span><i aria-hidden="true"></i><span>Focus timer</span><i aria-hidden="true"></i><span>Finals revision plan</span><i aria-hidden="true"></i><span>Lock-screen countdown</span><i aria-hidden="true"></i><span>Progress report PDF</span><i aria-hidden="true"></i><span>Home-screen widgets</span><i aria-hidden="true"></i><span>What do I need on the final?</span><i aria-hidden="true"></i><span>Light and dark</span><i aria-hidden="true"></i></div></div></div>
+
+<section id="data" class="data spot">
   <div class="wrap">
     <p class="eyebrow">04 · Your data</p>
-    <h2>Your data stays yours.</h2>
-    <div class="pledges rise"><div><b>No account needed</b><p>Fasli works without signing in. Sign in with Google only if you want backup and sync.</p></div><div><b>Read on your phone first</b><p>Record PDFs are usually read on your phone, and only the courses and grades are sent for planning. If the phone can’t read a file, it goes to our server and is deleted right after.</p></div><div><b>No university password</b><p>Fasli never asks for your university password.</p></div><div><b>No ads</b><p>Delete your data or your account from Settings at any time.</p></div></div>
+    <h2 class="rise">Your data stays yours.</h2>
+    <div class="pledges"><div class="rise" style="--d:0"><span class="pn num">01</span><b>No account needed</b><p>Fasli works without signing in. Sign in with Google only if you want backup and sync.</p></div><div class="rise" style="--d:1"><span class="pn num">02</span><b>Read on your phone first</b><p>Record PDFs are usually read on your phone, and only the courses and grades are sent for planning. If the phone can’t read a file, it goes to our server and is deleted right after.</p></div><div class="rise" style="--d:2"><span class="pn num">03</span><b>No university password</b><p>Fasli never asks for your university password.</p></div><div class="rise" style="--d:3"><span class="pn num">04</span><b>No ads</b><p>Delete your data or your account from Settings at any time.</p></div></div>
     <a class="textlink" href="../privacy/">Read the privacy policy <span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </section>
 
 <section id="join" class="join">
   <div class="wrap">
-    <div class="slip rise">
+    <div class="slip tear">
       <div class="stub">
         <span class="k">Closed test</span>
         <span class="big">Android</span>
         <span class="k">Free · 14 days</span>
+        <span class="admit" aria-hidden="true">Admit one</span>
       </div>
       <div class="body">
         <h2>Try Fasli before it reaches Google Play.</h2>
         <p>We are inviting students to test Fasli before it goes public. Testing is free and voluntary.</p>
         <ul><li>An Android phone and a Gmail address</li><li>Keep the app installed for 14 days. You don’t need to use it every day.</li></ul>
-        <a class="btn" href="mailto:support@fasli.app?subject=Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0APhone%3A%20%0A">Email us to join</a>
+        <a class="btn magnet" href="mailto:support@fasli.app?subject=Join%20the%20Fasli%20test&amp;body=Gmail%3A%20%0APhone%3A%20%0A"><span>Email us to join</span></a>
         <p class="or">or write to support@fasli.app with your Gmail address.</p>
       </div>
     </div>
@@ -136,20 +166,6 @@
     <div class="base"><span>© 2026 Fasli</span><span>Your degree, one semester at a time.</span></div>
   </div>
 </footer>
-<script>
-(function(){
-  var img=document.getElementById('tabshot'),btns=document.querySelectorAll('.toc button');
-  btns.forEach(function(b){b.addEventListener('click',function(){
-    if(b.getAttribute('aria-pressed')==='true')return;
-    btns.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
-    img.classList.add('fade');
-    setTimeout(function(){img.onload=function(){img.classList.remove('fade')};img.src=b.dataset.shot;img.alt=b.dataset.alt},180);
-  })});
-  var els=document.querySelectorAll('.rise');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  els.forEach(function(e){io.observe(e)});
-})();
-</script>
+<script src="../app.js" defer></script>
 </body>
 </html>
